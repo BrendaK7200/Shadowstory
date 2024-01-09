@@ -254,6 +254,8 @@ function NamingScreen:update()
                 self.timer = 0
             else
                 Game.save_name = self.name
+                local napsta = Game:getPartyMember("napsta")
+                napsta.name = self.name
                 Game:setFlag("notanewsave", true)
                 Assets.stopAndPlaySound("cymbal")
                 Game.world.music:fade(0, 1)

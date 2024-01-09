@@ -4,9 +4,9 @@ end
 
 function Mod:postInit(new_file)
     if new_file then
-        local namingScreen = NamingScreen()
-        namingScreen.layer = WORLD_LAYERS["ui"]
-        Game.stage:addChild(namingScreen)
+        local newFile = NewFile()
+        newFile.layer = WORLD_LAYERS["ui"]
+        Game.stage:addChild(newFile)
     end
 end
 

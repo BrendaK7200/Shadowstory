@@ -29,6 +29,8 @@ function NamingScreen:init(x, y)
     }
 
     self.name = ""
+
+    self.nodoubleinput = false
 end
 
 function NamingScreen:draw()
@@ -208,7 +210,15 @@ function NamingScreen:update()
             end
             if self.selected_row == 9 then
                 if self.selected_col == 1 then
-                    -- Do nothing for now
+                    if Game:getFlag("notanewsave") then
+                        -- Do nothing for now
+                    else
+                        local newFile = NewFile()
+                        newFile.layer = WORLD_LAYERS["ui"]
+                        newFile.nodoubleinput = true
+                        Game.stage:addChild(newFile)
+                        self:remove()
+                    end
                 elseif self.selected_col == 2 then
                     if #self.name > 0 then
                         self.name = self.name:sub(1, #self.name - 1)
@@ -244,7 +254,9 @@ function NamingScreen:update()
                 self.timer = 0
             else
                 Game.save_name = self.name
+                Game:setFlag("notanewsave", true)
                 Assets.stopAndPlaySound("cymbal")
+                Game.world.music:fade(0, 1)
                 self.state = "NAMEOUTRO"
             end
         end
@@ -277,6 +289,10 @@ function NamingScreen:update()
             Game.world.state = "GAMEPLAY"
         end
         self.sintimer = self.sintimer + (1*DTMULT)
+    end
+    if self.nodoubleinput == true then
+        self.name = ""
+        self.nodoubleinput = false
     end
 end
 

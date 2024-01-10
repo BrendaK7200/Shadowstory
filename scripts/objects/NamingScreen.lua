@@ -246,7 +246,7 @@ function NamingScreen:draw()
         end
         love.graphics.setColor(1,1,1)
         love.graphics.printf(self.nametext, 180, 60, SCREEN_WIDTH, "left")
-        love.graphics.printf(self.name, (0 - (self.timer*8.1)) + offset_x, (180 + (self.timer/2)) + offset_y, SCREEN_WIDTH, "center", 0, 1 + (self.timer/40))
+        love.graphics.printf(self.name, (0 - (self.timer*8.1)) + offset_x, (110 + (self.timer*1.25)) + offset_y, SCREEN_WIDTH, "center", 0, 1 + (self.timer/40))
 
         if self.selected_col == 1 then
             love.graphics.setColor(1,1,0)
@@ -273,7 +273,7 @@ function NamingScreen:draw()
         end
         love.graphics.setColor(1,1,1)
         love.graphics.printf(self.nametext, 180, 60, SCREEN_WIDTH, "left")
-        love.graphics.printf(self.name, (0 - (self.timer*8.1)) + offset_x, (180 + (self.timer/2)) + offset_y, SCREEN_WIDTH, "center", 0, 1 + (self.timer/40))
+        love.graphics.printf(self.name, (0 - (self.timer*8.1)) + offset_x, (110 + (self.timer*1.25)) + offset_y, SCREEN_WIDTH, "center", 0, 1 + (self.timer/40))
 
         love.graphics.setColor(1,1,0)
         love.graphics.print("Go back", 120-4, 400)
@@ -289,7 +289,7 @@ function NamingScreen:draw()
             end
         end
         love.graphics.setColor(1,1,1)
-        love.graphics.printf(self.name, (0 - (self.timer*8.1)) + offset_x, (180 + (self.timer/2)) + offset_y, SCREEN_WIDTH, "center", 0, 1 + (self.timer/40))
+        love.graphics.printf(self.name, (0 - (self.timer*8.1)) + offset_x, (110 + (self.timer*1.25)) + offset_y, SCREEN_WIDTH, "center", 0, 1 + (self.timer/40))
     end
 end
 
@@ -444,10 +444,8 @@ function NamingScreen:update()
                 self.timer = 0
             else
                 Game.save_name = self.name
-                local napsta = Game:getPartyMember("napsta")
-                napsta.name = self.name
                 Game:setFlag("notanewsave", true)
-                Assets.stopAndPlaySound("cymbal")
+                Assets.stopAndPlaySound("cymbal", 0.8, 0.95)
                 Game.world.music.volume = 0
                 self.state = "NAMEOUTRO"
             end

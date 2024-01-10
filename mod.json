@@ -4,7 +4,7 @@
     // Displays on the main menu.
     "name": "Shadowstory",
     // Displays underneath the name. Optional.
-    "subtitle": "",
+    "subtitle": "The friendly RPG where nobody has to die!",
 
     // The version of your mod.
     "version": "v1.0.0",
@@ -19,24 +19,8 @@
     // The map that you start in when first starting the mod.
     "map": "area1",
 
-    "useSaves": false,
-
     // The party. The first character is the player.
     "party": ["napsta"],
-
-    // The inventory. Contains three darkburgers, a cell phone and a shadow crystal by default.
-    "inventory": {
-        "items": [],
-        "key_items": []
-    },
-
-    // Equipment for your party. Not specifying equipment defaults to the following.
-    "equipment": {
-        "kris": {
-            "weapon": "wood_blade",
-            "armor": []
-        }
-    },
 
     // Should never be true, but just in case. Restarts the entire engine when leaving the mod.
     // If you need this, you're most likely doing something wrong.
@@ -55,6 +39,12 @@
     // These config values can control chapter-specific features as well.
     "config": {
         "kristal": {
+            // Seeing +X when an enemy's mercy goes up
+            "mercyMessages": true,
+            // Whether the mercy bar should appear or not
+            "mercyBar": true,
+            // Whether the HP and Mercy bars should show percentages
+            "enemyBarPercentages": true,
             // End of config
         }
     }

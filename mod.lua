@@ -1,5 +1,6 @@
 function Mod:init()
     print("Loaded "..self.info.name.."!")
+    love.mouse.setVisible(true)
 end
 
 function Mod:postInit(new_file)

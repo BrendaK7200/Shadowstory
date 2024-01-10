@@ -22,6 +22,8 @@ function NamingScreen:init(x, y)
     self.fade.alpha = 0
     self.fade.layer = WORLD_LAYERS["top"]
 	Game.stage:addChild(self.fade)
+    
+    self.draw_bg = true
 
     self.upper_keys = {
         {"A","B","C","D","E","F","G"},
@@ -46,8 +48,11 @@ end
 function NamingScreen:draw()
     super.draw(self)
     love.graphics.setColor(0,0,0)
-    love.graphics.rectangle("fill", 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)
+    if self.draw_bg then
+        love.graphics.rectangle("fill", 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)
+    end
 
+    love.graphics.setFont(self.font)
     if self.state == "NAMEENTRY" then
         love.graphics.setColor(1,1,1)
         love.graphics.printf("Name the fallen human.", 0, 60, SCREEN_WIDTH, "center")
@@ -370,7 +375,11 @@ function NamingScreen:update()
                         newFile.layer = WORLD_LAYERS["ui"]
                         newFile.nodoubleinput = true
                         Game.stage:addChild(newFile)
-                        self:remove()
+                        self.layer = WORLD_LAYERS["ui"]+1
+                        self.draw_bg = false
+                        Game.world.timer:after(1/30, function()
+                            self:remove()
+                        end)
                     end
                 elseif self.selected_col == 2 then
                     if #self.name > 0 then

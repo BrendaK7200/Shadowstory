@@ -476,73 +476,19 @@ function NamingScreen:check()
     if self.name:lower() == "aaaaaa" then
         self.can_use_name = true
         self.nametext = "Not very creative...?"
-    elseif self.name:lower() == "asgore" then
+    elseif self.name:lower() == "echo" then
         self.can_use_name = false
-        self.nametext = "You cannot."
-    elseif self.name:lower() == "toriel" then
-        self.can_use_name = false
-        self.nametext = "I think you should\nthink of your own\nname, my child."
-    elseif self.name:lower() == "sans" then
-        self.can_use_name = false
-        self.nametext = "nope."
-    elseif self.name:lower() == "undyne" then
-        self.can_use_name = false
-        self.nametext = "Get your OWN name!"
-    elseif self.name:lower() == "flowey" then
-        self.can_use_name = false
-        self.nametext = "I already CHOSE\nthat name."
-    elseif self.name:lower() == "chara" then
-        self.can_use_name = true
-        self.nametext = "The true name."
+        self.nametext = "I already CHOSE\nthat name, darling."
     elseif self.name:lower() == "alphys" then
         self.can_use_name = false
-        self.nametext = "D-don't do that."
-    elseif self.name:lower() == "alphy" then
+        self.nametext = "U-um, maybe p-pick\na d-different name?"
+    elseif self.name:lower() == "napsta" then
         self.can_use_name = true
-        self.nametext = "Uh... OK?"
-    elseif self.name:lower() == "papyru" then
-        self.can_use_name = true
-        self.nametext = "I'LL ALLOW IT!!!!"
-    elseif self.name:lower() == "napsta" or self.name:lower() == "blooky" then
-        self.can_use_name = true
-        self.nametext = "...........\n(They're powerless to\nstop you.)"
+        self.nametext = "WARNING: This name will\nmake your life hell.\nProceed anyway?"
     elseif self.name:lower() == "murder" or self.name:lower() == "mercy" then
         self.can_use_name = true
         self.nametext = "That's a little on-\nthe nose, isn't it...?"
-    elseif self.name:lower() == "asriel" then
-        self.can_use_name = false
-        self.nametext = "..."
-    elseif self.name:lower() == "catty" then
-        self.can_use_name = true
-        self.nametext = "Bratty! Bratty!\nThat's MY name!"
-    elseif self.name:lower() == "bratty" then
-        self.can_use_name = true
-        self.nametext = "Like, OK I guess."
-    elseif self.name:lower() == "mtt" or self.name:lower() == "metta" or self.name:lower() == "mett" then
-        self.can_use_name = true
-        self.nametext = "OOOOH!!! ARE YOU\nPROMOTING MY BRAND?"
-    elseif self.name:lower() == "gerson" then
-        self.can_use_name = true
-        self.nametext = "Wah ha ha! Why not?"
-    elseif self.name:lower() == "shyren" then
-        self.can_use_name = true
-        self.nametext = "...?"
-    elseif self.name:lower() == "aaron" then
-        self.can_use_name = true
-        self.nametext = "Is this name correct? ; )"
-    elseif self.name:lower() == "temmie" then
-        self.can_use_name = true
-        self.nametext = "hOI!"
-    elseif self.name:lower() == "woshua" then
-        self.can_use_name = true
-        self.nametext = "Clean name."
-    elseif self.name:lower() == "jerry" then
-        self.can_use_name = true
-        self.nametext = "Jerry."
-    elseif self.name:lower() == "bpants" then
-        self.can_use_name = true
-        self.nametext = "You are really scraping the\nbottom of the barrel."
-    elseif self.name:lower() == "gaster" then
+    elseif self.name:lower() == "dess" then
         self.can_use_name = false
         if not Game.world.cutscene then
             Game.world:startCutscene(function(cutscene)

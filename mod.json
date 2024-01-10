@@ -17,32 +17,24 @@
     "chapter": 1,
 
     // The map that you start in when first starting the mod.
-    "map": "room1",
+    "map": "area1",
 
     "useSaves": false,
 
     // The party. The first character is the player.
-    "party": ["kris", "susie", "ralsei"],
+    "party": ["napsta"],
 
     // The inventory. Contains three darkburgers, a cell phone and a shadow crystal by default.
     "inventory": {
-        "items": ["glowshard", "darkburger", "darkburger", "darkburger"],
-        "key_items": ["cell_phone", "shadowcrystal"]
+        "items": [],
+        "key_items": []
     },
 
     // Equipment for your party. Not specifying equipment defaults to the following.
     "equipment": {
         "kris": {
             "weapon": "wood_blade",
-            "armor": ["amber_card", "amber_card"]
-        },
-        "susie": {
-            "weapon": "mane_ax",
-            "armor": ["amber_card", "amber_card"]
-        },
-        "ralsei": {
-            "weapon": "red_scarf",
-            "armor": ["amber_card", "amber_card"]
+            "armor": []
         }
     },
 

@@ -2,11 +2,14 @@ local NewFile, super = Class(Object, "NewFile")
 
 function NewFile:init(x, y)
     super.init(self)
+    Input.clear("confirm")
 
     Game.world.state = "MENU"
     Game.world.music:play("menu_0", 1, 1)
 
     self.state = "MAIN" --MAIN, SETTINGS (currently doesn't exist)
+
+    self.second = false
 
     self.font = Assets.getFont("main")
     self.font2 = Assets.getFont("small")
@@ -62,6 +65,9 @@ function NewFile:update()
             local namingScreen = NamingScreen()
             namingScreen.layer = WORLD_LAYERS["ui"]
             namingScreen.nodoubleinput = true
+            if self.second then
+                namingScreen.selected_row = 9
+            end
             Game.stage:addChild(namingScreen)
             self:remove()
         else

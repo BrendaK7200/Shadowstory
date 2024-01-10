@@ -2,6 +2,7 @@ local NamingScreen, super = Class(Object, "NamingScreen")
 
 function NamingScreen:init(x, y)
     super.init(self)
+    Input.clear("confirm")
 
     Game.world.state = "MENU"
 
@@ -298,6 +299,18 @@ function NamingScreen:update()
     if self.state == "NAMEENTRY" then
         if Input.pressed("down") then
             if self.selected_row < 9 then
+                if self.selected_row == 8 then
+                    if self.selected_col < 3 then
+                        self.selected_col = 1
+                    elseif self.selected_col < 6 then
+                        self.selected_col = 2
+                    end
+                elseif self.selected_row == 7 then
+                    if self.selected_col > 5 then
+                        self.selected_col = 3
+                        self.selected_row = self.selected_row + 1
+                    end
+                end
                 self.selected_row = self.selected_row + 1
             else
                 self.selected_row = 1
@@ -312,6 +325,14 @@ function NamingScreen:update()
         end
         if Input.pressed("up") then
             if self.selected_row > 1 then
+                if self.selected_row == 9 then
+                    if self.selected_col == 2 then
+                        self.selected_col = 3
+                    elseif self.selected_col == 3 then
+                        self.selected_col = 6
+                        self.selected_row = self.selected_row - 1
+                    end
+                end
                 self.selected_row = self.selected_row - 1
             else
                 self.selected_row = 9
@@ -374,6 +395,7 @@ function NamingScreen:update()
                         local newFile = NewFile()
                         newFile.layer = WORLD_LAYERS["ui"]
                         newFile.nodoubleinput = true
+                        newFile.second = true
                         Game.stage:addChild(newFile)
                         self.layer = WORLD_LAYERS["ui"]+1
                         self.draw_bg = false

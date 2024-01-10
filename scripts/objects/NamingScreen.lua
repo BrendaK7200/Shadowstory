@@ -38,6 +38,7 @@ function NamingScreen:init(x, y)
 
     self.name = ""
     self.nametext = "Is this name correct?"
+    self.can_use_name = true
 
     self.nodoubleinput = false
 end
@@ -233,29 +234,56 @@ function NamingScreen:draw()
         if self.shake > 0 then
             if self.timer - last_shake >= (1 * DTMULT) then
                 last_shake = self.timer
-                offset_x = Utils.round(Utils.random(-1, 1))
-                offset_y = Utils.round(Utils.random(-1, 1))
+                offset_x = Utils.round(Utils.random(-2, 2))
+                offset_y = Utils.round(Utils.random(-2, 2))
             end
         end
         love.graphics.setColor(1,1,1)
-        love.graphics.printf(self.nametext, 0, 60, SCREEN_WIDTH, "center")
-        love.graphics.printf(self.name, (0 - (self.timer*8.1)) + offset_x, (160 + (self.timer/2)) + offset_y, SCREEN_WIDTH, "center", 0, 1 + (self.timer/40))
+        love.graphics.printf(self.nametext, 180, 60, SCREEN_WIDTH, "left")
+        love.graphics.printf(self.name, (0 - (self.timer*8.1)) + offset_x, (180 + (self.timer/2)) + offset_y, SCREEN_WIDTH, "center", 0, 1 + (self.timer/40))
 
         if self.selected_col == 1 then
             love.graphics.setColor(1,1,0)
         else
             love.graphics.setColor(1,1,1)
         end
-        love.graphics.print("No", 150, 420)
+        love.graphics.print("No", 150-4, 400)
         if self.selected_col == 2 then
             love.graphics.setColor(1,1,0)
         else
             love.graphics.setColor(1,1,1)
         end
-        love.graphics.print("Yes", 450, 420)
-    else
+        love.graphics.print("Yes", 460, 400)
+    elseif self.state == "BADNAME" then
+        local last_shake = 0
+        local offset_x = 0
+        local offset_y = 0
+        if self.shake > 0 then
+            if self.timer - last_shake >= (1 * DTMULT) then
+                last_shake = self.timer
+                offset_x = Utils.round(Utils.random(-2, 2))
+                offset_y = Utils.round(Utils.random(-2, 2))
+            end
+        end
         love.graphics.setColor(1,1,1)
-        love.graphics.printf(self.name, 0 - (self.timer*8.1), 100 + (self.timer/2), SCREEN_WIDTH, "center", 0, 1 + (self.timer/40))
+        love.graphics.printf(self.nametext, 180, 60, SCREEN_WIDTH, "left")
+        love.graphics.printf(self.name, (0 - (self.timer*8.1)) + offset_x, (180 + (self.timer/2)) + offset_y, SCREEN_WIDTH, "center", 0, 1 + (self.timer/40))
+
+        love.graphics.setColor(1,1,0)
+        love.graphics.print("Go back", 120-4, 400)
+    else
+        local last_shake = 0
+        local offset_x = 0
+        local offset_y = 0
+        if self.shake > 0 then
+            if self.timer - last_shake >= (1 * DTMULT) then
+                last_shake = self.timer
+                offset_x = Utils.round(Utils.random(-2, 2))
+                offset_y = Utils.round(Utils.random(-2, 2))
+            end
+        end
+        love.graphics.setColor(1,1,1)
+        love.graphics.printf(self.name, (0 - (self.timer*8.1)) + offset_x, (180 + (self.timer/2)) + offset_y, SCREEN_WIDTH, "center", 0, 1 + (self.timer/40))
     end
 end
 
@@ -350,7 +378,12 @@ function NamingScreen:update()
                     end
                 else
                     if #self.name > 0 then
-                        self.state = "NAMECONFIRM"
+                        self:check()
+                        if self.can_use_name then
+                            self.state = "NAMECONFIRM"
+                        else
+                            self.state = "BADNAME"
+                        end
                         self.selected_col = 1
                         self.sintimer = 0
                     end
@@ -388,16 +421,28 @@ function NamingScreen:update()
                 self.state = "NAMEOUTRO"
             end
         end
+        --[[
         if Input.pressed("cancel") then
             self.state = "NAMEENTRY"
             self.selected_col = 3
             self.timer = 0
         end
+        --]]
         if Input.pressed("left") then
             self.selected_col = 1
         end
         if Input.pressed("right") then
             self.selected_col = 2
+        end
+        if self.timer < 100 then
+            self.timer = self.timer + (1*DTMULT)
+        end
+        self.sintimer = self.sintimer + (1*DTMULT)
+    elseif self.state == "BADNAME" then
+        if Input.pressed("confirm") then
+            self.state = "NAMEENTRY"
+            self.selected_col = 3
+            self.timer = 0
         end
         if self.timer < 100 then
             self.timer = self.timer + (1*DTMULT)
@@ -429,52 +474,76 @@ end
 
 function NamingScreen:check()
     if self.name:lower() == "aaaaaa" then
+        self.can_use_name = true
         self.nametext = "Not very creative...?"
     elseif self.name:lower() == "asgore" then
+        self.can_use_name = false
         self.nametext = "You cannot."
     elseif self.name:lower() == "toriel" then
+        self.can_use_name = false
         self.nametext = "I think you should\nthink of your own\nname, my child."
     elseif self.name:lower() == "sans" then
+        self.can_use_name = false
         self.nametext = "nope."
     elseif self.name:lower() == "undyne" then
+        self.can_use_name = false
         self.nametext = "Get your OWN name!"
     elseif self.name:lower() == "flowey" then
+        self.can_use_name = false
         self.nametext = "I already CHOSE\nthat name."
     elseif self.name:lower() == "chara" then
+        self.can_use_name = true
         self.nametext = "The true name."
     elseif self.name:lower() == "alphys" then
+        self.can_use_name = false
         self.nametext = "D-don't do that."
     elseif self.name:lower() == "alphy" then
+        self.can_use_name = true
         self.nametext = "Uh... OK?"
     elseif self.name:lower() == "papyru" then
+        self.can_use_name = true
         self.nametext = "I'LL ALLOW IT!!!!"
     elseif self.name:lower() == "napsta" or self.name:lower() == "blooky" then
+        self.can_use_name = true
         self.nametext = "...........\n(They're powerless to\nstop you.)"
     elseif self.name:lower() == "murder" or self.name:lower() == "mercy" then
+        self.can_use_name = true
         self.nametext = "That's a little on-\nthe nose, isn't it...?"
     elseif self.name:lower() == "asriel" then
+        self.can_use_name = false
         self.nametext = "..."
     elseif self.name:lower() == "catty" then
+        self.can_use_name = true
         self.nametext = "Bratty! Bratty!\nThat's MY name!"
     elseif self.name:lower() == "bratty" then
+        self.can_use_name = true
         self.nametext = "Like, OK I guess."
     elseif self.name:lower() == "mtt" or self.name:lower() == "metta" or self.name:lower() == "mett" then
+        self.can_use_name = true
         self.nametext = "OOOOH!!! ARE YOU\nPROMOTING MY BRAND?"
     elseif self.name:lower() == "gerson" then
+        self.can_use_name = true
         self.nametext = "Wah ha ha! Why not?"
     elseif self.name:lower() == "shyren" then
+        self.can_use_name = true
         self.nametext = "...?"
     elseif self.name:lower() == "aaron" then
+        self.can_use_name = true
         self.nametext = "Is this name correct? ; )"
     elseif self.name:lower() == "temmie" then
+        self.can_use_name = true
         self.nametext = "hOI!"
     elseif self.name:lower() == "woshua" then
+        self.can_use_name = true
         self.nametext = "Clean name."
     elseif self.name:lower() == "jerry" then
+        self.can_use_name = true
         self.nametext = "Jerry."
     elseif self.name:lower() == "bpants" then
+        self.can_use_name = true
         self.nametext = "You are really scraping the\nbottom of the barrel."
     elseif self.name:lower() == "gaster" then
+        self.can_use_name = false
         if not Game.world.cutscene then
             Game.world:startCutscene(function(cutscene)
                 self.name = self.name:sub( 1, #self.name - 1 )
@@ -483,6 +552,7 @@ function NamingScreen:check()
             end)
         end
     else
+        self.can_use_name = true
         self.nametext = "Is this name correct?"
     end
 end

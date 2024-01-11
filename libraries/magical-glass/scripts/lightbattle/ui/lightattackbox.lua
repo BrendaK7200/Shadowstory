@@ -32,7 +32,8 @@ function LightAttackBox:createBolts()
         lane.attacked = false
         lane.score = 0
         lane.stretch = nil
-        lane.direction = lane.weapon.getLightBoltDirection and lane.weapon:getLightBoltDirection() or "right"
+        --lane.direction = lane.weapon.getLightBoltDirection and lane.weapon:getLightBoltDirection() or "right"
+        lane.direction = lane.weapon:getLightBoltDirection()
 
         if (lane.weapon.getLightBoltCount and lane.weapon:getLightBoltCount() or 1) > 1 then
             lane.attack_type = "shoe"

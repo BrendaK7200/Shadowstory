@@ -6,8 +6,8 @@ function LightActionBoxSingle:init(x, y, index, battler)
     self.index = 1
     self.battler = battler
 
-    self.selected_button = 1
-    self.last_button = 1
+    self.selected_button = 4
+    self.last_button = 4
 
     self.revert_to = 40
 
@@ -31,7 +31,8 @@ function LightActionBoxSingle:createButtons()
 
     self.buttons = {}
 
-    local btn_types = {"fight", "act", "spell", "item", "mercy"}
+    --local btn_types = {"fight", "act", "spell", "item", "mercy"}
+    local btn_types = {"mercy", "item", "spell", "act", "fight"}
 
     if not self.battler.chara:hasAct() then Utils.removeFromTable(btn_types, "act") end
     if not self.battler.chara:hasSpells() then Utils.removeFromTable(btn_types, "spell") end
@@ -61,9 +62,11 @@ function LightActionBoxSingle:createButtons()
                 end
                 x = math.floor(67 + ((loc - 1) * 156))
                 if loc == 2 then
-                    x = x - 3
+                    x = x - 40
                 elseif loc == 3 then
-                    x = x + 1
+                    x = x + 40 - 1
+                elseif loc == 4 then
+                    x = x - 1
                 end
             else
                 x = math.floor(67 + ((i - 1) * 117))
@@ -172,12 +175,23 @@ function LightActionBoxSingle:drawStatusStrip()
     local x, y = 10, 130
     local name = self.battler.chara:getName()
     local level = Game:isLight() and self.battler.chara:getLightLV() or self.battler.chara:getLevel()
+    local flag = Game:getFlag("#lightactionboxstyle", "swap")
 
     love.graphics.setFont(Assets.getFont("namelv", 24))
     love.graphics.setColor(COLORS["white"])
-    love.graphics.print(name .. "   LV " .. level, x, y)
+    if flag == "swap" then
+        love.graphics.print(name .. "   CR " .. level, x, y)
+    else
+        love.graphics.print(name .. "   CR " .. level, x, y)
+    end
+    
+    --[[
+    love.graphics.print("LV " .. level, x, y)
+    love.graphics.printf("AAA", -18, 180, SCREEN_WIDTH, "center")
+    --love.graphics.printf("THIS IS ISDSDFJSDJFSDJFJDSF", -179, 184-60, 1000, "center", 0)
+    ]]
 
-    love.graphics.draw(Assets.getTexture("ui/lightbattle/hpname"), x + 214, y + 5)
+    love.graphics.draw(Assets.getTexture("ui/lightbattle/hpname"), x + 214 --[[+ 139]], y + 5)
 
     local max = self.battler.chara:getStat("health")
     local current = self.battler.chara:getHealth()
@@ -193,9 +207,9 @@ function LightActionBoxSingle:drawStatusStrip()
     end
 
     love.graphics.setColor(COLORS["red"])
-    love.graphics.rectangle("fill", x + 245, y, size * 1.25, 21)
+    love.graphics.rectangle("fill", x + 245 --[[+ 139]], y, size * 1.25, 21)
     love.graphics.setColor(COLORS["yellow"])
-    love.graphics.rectangle("fill", x + 245, y, limit == true and math.ceil((current / max) * size) * 1.25 or current * 1.25, 21)
+    love.graphics.rectangle("fill", x + 245 --[[+ 139]], y, limit == true and math.ceil((current / max) * size) * 1.25 or current * 1.25, 21)
 
     if max < 10 and max >= 0 then
         max = "0" .. tostring(max)
@@ -210,7 +224,7 @@ function LightActionBoxSingle:drawStatusStrip()
         color = COLORS.aqua
     end
     love.graphics.setColor(color)
-    love.graphics.print(current .. " / " .. max, x + 245 + size * 1.25 + 14, y)
+    love.graphics.print(current .. " / " .. max, (x + 245 + size * 1.25 + 14) --[[+ 139]], y)
 end
 
 function LightActionBoxSingle:draw()

@@ -12,7 +12,7 @@ function character:init()
     self.title = "Player"
 
     self.soul_priority = 2
-    self.soul_color = {1, 0, 0}
+    self.soul_color = {1, 30/255, 1}
 
     self.has_act = true
     self.has_spells = false
@@ -37,8 +37,8 @@ function character:init()
     self:setArmor(1, nil)
     self:setArmor(2, nil)
 
-    self.lw_weapon_default = "light/pencil"
-    self.lw_armor_default = "light/bandage"
+    self.lw_weapon_default = "ut_weapons/stick"
+    self.lw_armor_default = "ut_weapons/stick"
 
     self.color = {1, 1, 1}
     self.dmg_color = nil

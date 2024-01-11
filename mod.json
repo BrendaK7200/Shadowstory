@@ -26,7 +26,7 @@
     // If you need this, you're most likely doing something wrong.
     "hardReset": false,
 
-    "encounter": "froggit",
+    //"encounter": "froggit",
 
     // Whether the mod is hidden from the mod selection.
     "hidden": false,

@@ -53,15 +53,15 @@ function LightAttackBox:createBolts()
             local bolt
             if i == 1 then
                 if lane.direction == "left" then
-                    bolt = LightAttackBar(start_x + (lane.weapon.getLightBoltStart and lane.weapon:getLightBoltStart() or -16), 319, battler)
+                    bolt = LightAttackBar(self.arena.x + 60, 319, battler)
                 else
-                    bolt = LightAttackBar(start_x - (lane.weapon.getLightBoltStart and lane.weapon:getLightBoltStart() or -16), 319, battler)
+                    bolt = LightAttackBar(self.arena.x - 60, 319, battler)
                 end
             else
                 if lane.direction == "left" then
-                    bolt = LightAttackBar(start_x + (lane.weapon.getLightMultiboltVariance and lane.weapon:getLightMultiboltVariance(i - 1) or (50 * i)), 319, battler)
+                    bolt = LightAttackBar(self.arena.x + (lane.weapon.getLightMultiboltVariance and lane.weapon:getLightMultiboltVariance(i - 1) or (50 * i)), 319, battler)
                 else
-                    bolt = LightAttackBar(start_x - (lane.weapon.getLightMultiboltVariance and lane.weapon:getLightMultiboltVariance(i - 1) or (50 * i)), 319, battler)
+                    bolt = LightAttackBar(self.arena.x - (lane.weapon.getLightMultiboltVariance and lane.weapon:getLightMultiboltVariance(i - 1) or (50 * i)), 319, battler)
                 end
                 bolt.sprite:setSprite(bolt.inactive_sprite)
             end

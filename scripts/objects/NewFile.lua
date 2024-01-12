@@ -49,7 +49,7 @@ function NewFile:draw()
 
     love.graphics.setColor(0.5,0.5,0.5)
     love.graphics.setFont(self.font2)
-    love.graphics.printf("UNDERTALE/DELTARUNE BY TOBY FOX\n\n\nSHADOWSTORY V0.69 TEAM CRYSTALSEEKERS 2024", 0, 440, SCREEN_WIDTH, "center")
+    love.graphics.printf("UNDERTALE/DELTARUNE BY TOBY FOX\n\n\nSHADOWSTORY V0.69 TEAM WORLDSHIFTERS 2024", 0, 440, SCREEN_WIDTH, "center")
 end
 
 function NewFile:update()

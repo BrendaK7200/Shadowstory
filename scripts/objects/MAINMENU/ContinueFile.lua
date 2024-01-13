@@ -5,7 +5,7 @@ function ContinueFile:init(x, y)
     Input.clear("confirm")
 
     Game.world.state = "MENU"
-    Game.world.music:play("menu_0", 1, 1)
+    Game.world.music:play("menu_0", 0.6, 1)
 
     self.state = "MAIN" --MAIN, SETTINGS (currently doesn't exist), RESET
 
@@ -37,44 +37,52 @@ function ContinueFile:draw()
     if self.state == "KILLME" then
         love.graphics.setColor(0.5,0.5,0.5)
         love.graphics.setFont(self.font2)
-        love.graphics.printf("UNDERTALE/DELTARUNE BY TOBY FOX", 0, 448, SCREEN_WIDTH, "center")
-        love.graphics.printf("SHADOWSTORY V0.69 TEAM CRYSTALSEEKERS 2024", 0, 464, SCREEN_WIDTH, "center")
+        love.graphics.printf(scr_gettext("BRAND_1"), 0, 448, SCREEN_WIDTH, "center")
+        love.graphics.printf(scr_gettext("BRAND_2"), 0, 464, SCREEN_WIDTH, "center")
     elseif self.state == "MAIN" then
         love.graphics.setColor(1,1,1)
         love.graphics.draw(self.bg, 0, -238, 0, 2)
 
         love.graphics.printf(Game.save_name, 140, 130-6, SCREEN_WIDTH, "left")
-        love.graphics.printf("LV "..Game.save_level, -4, 130-6, SCREEN_WIDTH, "center")
+        love.graphics.printf("CR "..Game.save_level, -4, 130-6, SCREEN_WIDTH, "center")
         local minutes = math.floor(Game:getFlag("realplaytime") / 60)
         local seconds = math.floor(Game:getFlag("realplaytime") % 60)
         local time_text = string.format("%d:%02d", minutes, seconds)
         love.graphics.printf(time_text, -145-9, 130-6, SCREEN_WIDTH, "right")
         local data = Game:getSavePreview()
-        love.graphics.printf(data.room_name, 140, 160, SCREEN_WIDTH, "left")
+        love.graphics.printf(scr_gettext(data.room_name), 140, 160, SCREEN_WIDTH, "left")
 
         if self.selected == 1 then
             love.graphics.setColor(1,1,0)
         else
             love.graphics.setColor(1,1,1)
         end
-        love.graphics.printf("Continue", 170, 210, SCREEN_WIDTH, "left")
+        if Mod.language == "engrish" then
+            love.graphics.printf(scr_gettext("FILECONTINUE_1"), 170-50, 210, SCREEN_WIDTH, "left")
+        else
+            love.graphics.printf(scr_gettext("FILECONTINUE_1"), 170, 210, SCREEN_WIDTH, "left")
+        end
         if self.selected == 2 then
             love.graphics.setColor(1,1,0)
         else
             love.graphics.setColor(1,1,1)
         end
-        love.graphics.printf("Reset", -180, 210, SCREEN_WIDTH, "right")
+        if Mod.language == "engrish" then
+            love.graphics.printf(scr_gettext("FILECONTINUE_2"), -180+80, 210, SCREEN_WIDTH, "right")
+        else
+            love.graphics.printf(scr_gettext("FILECONTINUE_2"), -180, 210, SCREEN_WIDTH, "right")
+        end
         if self.selected == 3 then
             love.graphics.setColor(1,1,0)
         else
             love.graphics.setColor(1,1,1)
         end
-        love.graphics.printf("Settings", 0, 250, SCREEN_WIDTH, "center")
+        love.graphics.printf(scr_gettext("NEWFILE_9"), 0, 250, SCREEN_WIDTH, "center")
 
         love.graphics.setColor(0.5,0.5,0.5)
         love.graphics.setFont(self.font2)
-        love.graphics.printf("UNDERTALE/DELTARUNE BY TOBY FOX", 0, 448, SCREEN_WIDTH, "center")
-        love.graphics.printf("SHADOWSTORY V0.69 TEAM CRYSTALSEEKERS 2024", 0, 464, SCREEN_WIDTH, "center")
+        love.graphics.printf(scr_gettext("BRAND_1"), 0, 448, SCREEN_WIDTH, "center")
+        love.graphics.printf(scr_gettext("BRAND_2"), 0, 464, SCREEN_WIDTH, "center")
     elseif self.state == "RESET" then
         local last_shake = 0
         local offset_x = 0
@@ -85,7 +93,7 @@ function ContinueFile:draw()
             offset_y = Utils.round(Utils.random(-2, 2))
         end
         love.graphics.setColor(1,1,1)
-        love.graphics.printf("A name has already\nbeen chosen.", 180, 60, SCREEN_WIDTH, "left")
+        love.graphics.printf(scr_gettext("NAMESELECT_7"), 180, 60, SCREEN_WIDTH, "left")
         love.graphics.printf(Game.save_name, (0 - (self.timer*8.1)) + offset_x, (110 + (self.timer*1.25)) + offset_y, SCREEN_WIDTH, "center", 0, 1 + (self.timer/40))
 
         if self.selected == 1 then
@@ -93,13 +101,13 @@ function ContinueFile:draw()
         else
             love.graphics.setColor(1,1,1)
         end
-        love.graphics.print("No", 150-4, 400)
+        love.graphics.print(scr_gettext("No"), 150-4, 400)
         if self.selected == 2 then
             love.graphics.setColor(1,1,0)
         else
             love.graphics.setColor(1,1,1)
         end
-        love.graphics.print("Yes", 460, 400)
+        love.graphics.print(scr_gettext("Yes"), 460, 400)
     elseif self.state == "RESETTING" then
         local last_shake = 0
         local offset_x = 0
@@ -141,7 +149,11 @@ function ContinueFile:update()
                 self.state = "RESET"
                 self.selected = 1
             elseif self.selected == 3 then
-                -- Do nothing for now
+                local optionsmenu = OptionsMenu()
+                optionsmenu.layer = WORLD_LAYERS["ui"]
+                optionsmenu.nodoubleinput = true
+                Game.stage:addChild(optionsmenu)
+                self:remove()
             end
         end
     elseif self.state == "RESET" then

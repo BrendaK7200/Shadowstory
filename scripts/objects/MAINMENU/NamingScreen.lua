@@ -26,18 +26,33 @@ function NamingScreen:init(x, y)
     
     self.draw_bg = true
 
-    self.upper_keys = {
-        {"A","B","C","D","E","F","G"},
-        {"H","I","J","K","L","M","N"},
-        {"O","P","Q","R","S","T","U"},
-        {"V","W","X","Y","Z"}
-    }
-    self.lower_keys = {
-        {"a","b","c","d","e","f","g"},
-        {"h","i","j","k","l","m","n"},
-        {"o","p","q","r","s","t","u"},
-        {"v","w","x","y","z"}
-    }
+    if Mod.language == "engrish" then
+        self.upper_keys = {
+            {"a","b","c","d","e","f","g"},
+            {"h","i","j","k","l","m","n"},
+            {"o","p","q","r","s","t","u"},
+            {"v","w","x","y","z"}
+        }
+        self.lower_keys = {
+            {"A","B","C","D","E","F","G"},
+            {"H","I","J","K","L","M","N"},
+            {"O","P","Q","R","S","T","U"},
+            {"V","W","X","Y","Z"}
+        }
+    else
+        self.upper_keys = {
+            {"A","B","C","D","E","F","G"},
+            {"H","I","J","K","L","M","N"},
+            {"O","P","Q","R","S","T","U"},
+            {"V","W","X","Y","Z"}
+        }
+        self.lower_keys = {
+            {"a","b","c","d","e","f","g"},
+            {"h","i","j","k","l","m","n"},
+            {"o","p","q","r","s","t","u"},
+            {"v","w","x","y","z"}
+        }
+    end
 
     self.name = ""
     self.nametext = "Is this name correct?"
@@ -56,7 +71,7 @@ function NamingScreen:draw()
     love.graphics.setFont(self.font)
     if self.state == "NAMEENTRY" then
         love.graphics.setColor(1,1,1)
-        love.graphics.printf("Name the fallen human.", 0, 60, SCREEN_WIDTH, "center")
+        love.graphics.printf(scr_gettext("NAMESELECT_1"), 0, 60, SCREEN_WIDTH, "center")
         love.graphics.print(self.name, 280, 110)
 
         -- Uppercase
@@ -220,19 +235,19 @@ function NamingScreen:draw()
         else
             love.graphics.setColor(1,1,1)
         end
-        love.graphics.print("Quit", 120, 400)
+        love.graphics.print(scr_gettext("NAMESELECT_2"), 120, 400)
         if self.selected_row == 9 and self.selected_col == 2 then
             love.graphics.setColor(1,1,0)
         else
             love.graphics.setColor(1,1,1)
         end
-        love.graphics.print("Backspace", 240, 400)
+        love.graphics.print(scr_gettext("NAMESELECT_3"), 240, 400)
         if self.selected_row == 9 and self.selected_col == 3 then
             love.graphics.setColor(1,1,0)
         else
             love.graphics.setColor(1,1,1)
         end
-        love.graphics.print("Done", 440, 400)
+        love.graphics.print(scr_gettext("NAMESELECT_4"), 440, 400)
     elseif self.state == "NAMECONFIRM" then
         local last_shake = 0
         local offset_x = 0
@@ -253,13 +268,13 @@ function NamingScreen:draw()
         else
             love.graphics.setColor(1,1,1)
         end
-        love.graphics.print("No", 150-4, 400)
+        love.graphics.print(scr_gettext("No"), 150-4, 400)
         if self.selected_col == 2 then
             love.graphics.setColor(1,1,0)
         else
             love.graphics.setColor(1,1,1)
         end
-        love.graphics.print("Yes", 460, 400)
+        love.graphics.print(scr_gettext("Yes"), 460, 400)
     elseif self.state == "BADNAME" then
         local last_shake = 0
         local offset_x = 0
@@ -276,7 +291,7 @@ function NamingScreen:draw()
         love.graphics.printf(self.name, (0 - (self.timer*8.1)) + offset_x, (110 + (self.timer*1.25)) + offset_y, SCREEN_WIDTH, "center", 0, 1 + (self.timer/40))
 
         love.graphics.setColor(1,1,0)
-        love.graphics.print("Go back", 120-4, 400)
+        love.graphics.print(scr_gettext("NAMESELECT_5"), 120-4, 400)
     else
         local last_shake = 0
         local offset_x = 0

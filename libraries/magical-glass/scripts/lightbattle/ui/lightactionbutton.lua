@@ -5,15 +5,25 @@ function LightActionButton:init(type, battler, x, y)
 
     self.type = type
     self.battler = battler
+
+    self.dir = "btn"
+
+    if Mod.language == "engrish" then
+        self.dir = "btn_en"
+    elseif Mod.language == "spanish" then
+        self.dir = "btn_sp"
+    elseif Mod.language == "portuguese" then
+        self.dir = "btn_pt"
+    end
     
-    if Kristal.getLibConfig("magical-glass", "action_button_style") == "deltatraveler" and Assets.getTexture("ui/lightbattle/btn/alt/" .. type) then
-        self.tex = Assets.getTexture("ui/lightbattle/btn/alt/" .. type)
-        self.hover_tex = Assets.getTexture("ui/lightbattle/btn/alt/" .. type .. "_h")
-        self.special_tex = Assets.getTexture("ui/lightbattle/btn/alt/" .. type .. "_a")
+    if Kristal.getLibConfig("magical-glass", "action_button_style") == "deltatraveler" and Assets.getTexture("ui/lightbattle/".. self.dir .."/alt/" .. type) then
+        self.tex = Assets.getTexture("ui/lightbattle/".. self.dir .."/alt/" .. type)
+        self.hover_tex = Assets.getTexture("ui/lightbattle/".. self.dir .."/alt/" .. type .. "_h")
+        self.special_tex = Assets.getTexture("ui/lightbattle/".. self.dir .."/alt/" .. type .. "_a")
     else
-        self.tex = Assets.getTexture("ui/lightbattle/btn/" .. type)
-        self.hover_tex = Assets.getTexture("ui/lightbattle/btn/" .. type .. "_h")
-        self.special_tex = Assets.getTexture("ui/lightbattle/btn/" .. type .. "_a")
+        self.tex = Assets.getTexture("ui/lightbattle/".. self.dir .."/" .. type)
+        self.hover_tex = Assets.getTexture("ui/lightbattle/".. self.dir .."/" .. type .. "_h")
+        self.special_tex = Assets.getTexture("ui/lightbattle/".. self.dir .."/" .. type .. "_a")
     end
 
     self.width = self.tex:getWidth()

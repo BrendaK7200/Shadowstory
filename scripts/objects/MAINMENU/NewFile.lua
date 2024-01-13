@@ -5,7 +5,7 @@ function NewFile:init(x, y)
     Input.clear("confirm")
 
     Game.world.state = "MENU"
-    Game.world.music:play("menu_0", 1, 1)
+    Game.world.music:play("menu_0", 0.6, 1)
 
     self.state = "MAIN" --MAIN, SETTINGS (currently doesn't exist)
 
@@ -26,30 +26,31 @@ function NewFile:draw()
 
     love.graphics.setColor(0.7,0.7,0.7)
     love.graphics.setFont(self.font)
-    love.graphics.printf("--- Instruction ---", 0, 40, SCREEN_WIDTH, "center")
-    love.graphics.print("[Z or ENTER] - Confirm", 170, 100)
-    love.graphics.print("[X or SHIFT] - Cancel", 170, 120+16)
-    love.graphics.print("[C or CTRL] - Menu (In-game)", 170, 160+12)
-    love.graphics.print("[F4] - Fullscreen", 170, 200+8)
-    love.graphics.print("[Hold ESC] - Quit", 170, 240+4)
-    love.graphics.print("When HP is 0, you lose.", 170, 280)
+    love.graphics.printf(scr_gettext("NEWFILE_1"), 0, 40, SCREEN_WIDTH, "center")
+    love.graphics.print(scr_gettext("NEWFILE_2"), 170, 100)
+    love.graphics.print(scr_gettext("NEWFILE_3"), 170, 120+16)
+    love.graphics.print(scr_gettext("NEWFILE_4"), 170, 160+12)
+    love.graphics.print(scr_gettext("NEWFILE_5"), 170, 200+8)
+    love.graphics.print(scr_gettext("NEWFILE_6"), 170, 240+4)
+    love.graphics.print(scr_gettext("NEWFILE_7"), 170, 280)
 
     if self.selected == 1 then
         love.graphics.setColor(1,1,0)
     else
         love.graphics.setColor(1,1,1)
     end
-    love.graphics.print("Begin Game", 170, 350-6)
+    love.graphics.print(scr_gettext("NEWFILE_8"), 170, 350-6)
     if self.selected == 2 then
         love.graphics.setColor(1,1,0)
     else
         love.graphics.setColor(1,1,1)
     end
-    love.graphics.print("Settings", 170, 390-6)
+    love.graphics.print(scr_gettext("NEWFILE_9"), 170, 390-6)
 
     love.graphics.setColor(0.5,0.5,0.5)
     love.graphics.setFont(self.font2)
-    love.graphics.printf("UNDERTALE/DELTARUNE BY TOBY FOX\n\n\nSHADOWSTORY V0.69 TEAM CRYSTALSEEKERS 2024", 0, 440, SCREEN_WIDTH, "center")
+    love.graphics.printf(scr_gettext("BRAND_1"), 0, 448, SCREEN_WIDTH, "center")
+    love.graphics.printf(scr_gettext("BRAND_2"), 0, 464, SCREEN_WIDTH, "center")
 end
 
 function NewFile:update()
@@ -71,7 +72,11 @@ function NewFile:update()
             Game.stage:addChild(namingScreen)
             self:remove()
         else
-            -- Do nothing for now
+            local optionsmenu = OptionsMenu(0,0,true)
+            optionsmenu.layer = WORLD_LAYERS["ui"]
+            optionsmenu.nodoubleinput = true
+            Game.stage:addChild(optionsmenu)
+            self:remove()
         end
     end
     self.nodoubleinput = false

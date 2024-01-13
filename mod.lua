@@ -1,3 +1,5 @@
+modRequire("scripts/main/scr_gettext")
+
 function Mod:init()
     print("Loaded "..self.info.name.."!")
     love.mouse.setVisible(true)
@@ -5,7 +7,6 @@ end
 
 function Mod:postInit(new_file)
     Game:setBorder("simple")
-    --[[
     if new_file then
         Game.lw_money = 0
         local newFile = NewFile()
@@ -17,10 +18,26 @@ function Mod:postInit(new_file)
         continueFile.layer = WORLD_LAYERS["ui"]
         Game.stage:addChild(continueFile)
     end
-    ]]
+end
+
+function Mod:save(data)
+    data.shadowstory = {}
+    data.shadowstory["language"] = Mod.language
+    data.shadowstory["action_box_style"] = Mod.action_box_style
+    data.shadowstory["use_player_name"] = Mod.use_player_name
 end
 
 function Mod:load(data, new_file, slot)
+    if new_file then
+        Mod.language = "english"
+        Mod.action_box_style = "swap"
+        Mod.use_player_name = true
+    else
+        data.shadowstory = data.shadowstory or {}
+        Mod.language = data.shadowstory["language"]
+        Mod.action_box_style = data.shadowstory["action_box_style"]
+        Mod.use_player_name = data.shadowstory["use_player_name"]
+    end
 end
 
 function Game:enter(previous_state, save_id, save_name)

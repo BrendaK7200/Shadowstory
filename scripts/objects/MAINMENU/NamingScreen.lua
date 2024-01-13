@@ -523,6 +523,9 @@ function NamingScreen:check()
     elseif self.name:lower() == "echo" then
         self.can_use_name = false
         self.nametext = "I already CHOSE\nthat name, darling."
+    elseif self.name:lower() == "metta" then
+        self.can_use_name = false
+        self.nametext = "..."
     elseif self.name:lower() == "alphys" then
         self.can_use_name = false
         self.nametext = "U-um, maybe p-pick\na d-different name?"
@@ -543,7 +546,7 @@ function NamingScreen:check()
         end
     else
         self.can_use_name = true
-        self.nametext = "Is this name correct?"
+        self.nametext = scr_gettext("NAMESELECT_6")
     end
 end
 

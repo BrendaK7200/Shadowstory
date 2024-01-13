@@ -84,3 +84,26 @@ function Game:enter(previous_state, save_id, save_name)
         })
     end
 end
+
+function Mod:getLightCurrency()
+    if Mod.language == "engrish" then
+        return "Dollar"
+    elseif Mod.language == "spanish" then
+        return "Oro"
+    elseif Mod.language == "portuguese" then
+        return "Ouro"
+    else
+        return "Gold"
+    end
+end
+function Mod:getLightCurrencyShort()
+    if Mod.language == "engrish" then
+        return "D"
+    elseif Mod.language == "spanish" then
+        return "O"
+    elseif Mod.language == "portuguese" then
+        return "O"
+    else
+        return "G"
+    end
+end

@@ -4,15 +4,50 @@
             "fileName": "maps/room1.tmx",
             "height": 960,
             "width": 800,
-            "x": 0,
+            "x": -280,
             "y": 0
         },
         {
             "fileName": "maps/room2.tmx",
             "height": 480,
             "width": 800,
-            "x": 880,
+            "x": 600,
             "y": -120
+        },
+        {
+            "fileName": "maps/ruins/room_area1.tmx",
+            "height": 520,
+            "width": 1360,
+            "x": 1680,
+            "y": -120
+        },
+        {
+            "fileName": "maps/ruins/room_area2.tmx",
+            "height": 880,
+            "width": 640,
+            "x": 2600,
+            "y": -1000
+        },
+        {
+            "fileName": "maps/ruins/ruins_1.tmx",
+            "height": 960,
+            "width": 640,
+            "x": 2600,
+            "y": -1960
+        },
+        {
+            "fileName": "maps/ruins/ruins_2.tmx",
+            "height": 480,
+            "width": 640,
+            "x": 2600,
+            "y": -2440
+        },
+        {
+            "fileName": "maps/ruins/ruins_3.tmx",
+            "height": 480,
+            "width": 1480,
+            "x": 2600,
+            "y": -2960
         }
     ],
     "onlyShowAdjacentMaps": false,

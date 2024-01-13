@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="34" height="13" tilewidth="40" tileheight="40" infinite="0" nextlayerid="10" nextobjectid="58">
+ <editorsettings>
+  <export target="room_area1.lua" format="lua"/>
+ </editorsettings>
+ <properties>
+  <property name="border" value="simple"/>
+  <property name="light" type="bool" value="true"/>
+  <property name="name" value="???"/>
+ </properties>
+ <tileset firstgid="1" source="../../tilesets/objects.tsx"/>
+ <objectgroup id="9" name="objects_deco">
+  <object id="57" gid="25" x="0" y="520" width="1360" height="520"/>
+ </objectgroup>
+ <objectgroup color="#0000ff" id="4" name="collision">
+  <object id="38" x="160" y="480">
+   <polygon points="0,0 -120,-120 -120,0"/>
+  </object>
+  <object id="39" x="440" y="480">
+   <polygon points="0,0 80,-80 80,0"/>
+  </object>
+  <object id="41" x="80" y="160">
+   <polygon points="0,0 40,-40 0,-40"/>
+  </object>
+  <object id="42" x="480" y="120">
+   <polygon points="0,0 40,40 40,0"/>
+  </object>
+  <object id="43" x="40" y="120" width="40" height="40"/>
+  <object id="44" x="0" y="120" width="40" height="360"/>
+  <object id="45" x="0" y="80" width="520" height="40"/>
+  <object id="46" x="520" y="120" width="40" height="40"/>
+  <object id="47" x="520" y="80" width="40" height="40"/>
+  <object id="48" x="560" y="120" width="40" height="200"/>
+  <object id="49" x="0" y="480" width="520" height="40"/>
+  <object id="50" x="600" y="280" width="594.063" height="40"/>
+  <object id="51" x="1276.06" y="280" width="83.9375" height="40"/>
+  <object id="52" x="520" y="400" width="840" height="120"/>
+  <object id="53" x="1320" y="320" width="40" height="80"/>
+  <object id="56" x="1120" y="240" width="240" height="40"/>
+ </objectgroup>
+ <objectgroup color="#ff00ff" id="7" name="objects">
+  <object id="55" name="transition" x="1195" y="268" width="80" height="40">
+   <properties>
+    <property name="facing" value="up"/>
+    <property name="map" value="ruins/room_area2"/>
+    <property name="marker" value="entryup"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup color="#7f00ff" id="2" name="markers">
+  <object id="27" name="entrydown" x="1240" y="360">
+   <point/>
+  </object>
+  <object id="31" name="spawn" x="300" y="290">
+   <point/>
+  </object>
+ </objectgroup>
+</map>

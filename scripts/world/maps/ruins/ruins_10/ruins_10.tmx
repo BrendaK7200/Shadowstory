@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="24" height="12" tilewidth="40" tileheight="40" infinite="0" nextlayerid="18" nextobjectid="239">
+ <editorsettings>
+  <export target="data.lua" format="lua"/>
+ </editorsettings>
+ <properties>
+  <property name="border" value="undertale/ruins"/>
+  <property name="light" type="bool" value="true"/>
+  <property name="music" value="ruins"/>
+  <property name="name" value="Ruins"/>
+ </properties>
+ <tileset firstgid="1" source="../../../tilesets/ruins1.tsx"/>
+ <tileset firstgid="153" source="../../../tilesets/ruins2.tsx"/>
+ <tileset firstgid="249" source="../../../tilesets/ruins3.tsx"/>
+ <tileset firstgid="321" source="../../../tilesets/ruins4.tsx"/>
+ <tileset firstgid="361" source="../../../tilesets/ruins5.tsx"/>
+ <tileset firstgid="489" source="../../../tilesets/objects.tsx"/>
+ <layer id="1" name="Tile Layer 1" width="24" height="12">
+  <data encoding="csv">
+0,0,30,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,31,0,
+23,23,24,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,22,23,
+3,3,5,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,2,3,
+3,3,5,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,2,3,
+11,11,13,17,17,17,17,17,17,17,17,17,17,17,17,120,17,17,17,17,17,17,10,11,
+9,9,9,9,26,17,17,17,17,17,17,17,17,17,17,120,17,17,17,17,17,25,9,9,
+9,9,9,9,34,17,17,17,17,17,17,17,17,17,17,120,17,17,17,17,17,33,9,9,
+7,7,8,17,17,17,17,17,17,249,249,249,120,17,17,120,17,17,17,17,17,17,6,7,
+0,0,16,17,17,17,17,17,17,17,17,17,17,17,17,120,17,17,17,17,17,17,14,0,
+0,0,16,17,17,17,17,17,17,17,17,17,17,17,17,120,17,17,17,17,17,17,14,0,
+0,0,38,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,39,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="12" name="Tile Layer 2" width="24" height="12">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,87,0,0,0,0,87,0,0,0,0,0,0,0,87,0,0,0,0,
+0,0,0,0,0,0,87,0,301,0,0,87,0,0,0,0,0,0,0,87,0,0,0,0,
+0,0,0,0,0,0,87,0,0,0,0,87,0,0,0,0,0,0,0,87,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="13" name="Tile Layer 3" width="24" height="12">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <objectgroup id="15" name="objects_deco"/>
+ <objectgroup color="#0000ff" id="4" name="collision">
+  <object id="222" x="480" y="280" width="40" height="40"/>
+  <object id="235" x="0" y="280">
+   <polygon points="0,0 120,0 120,120 880,120 880,0 960,0 960,40 920,40 920,160 80,160 80,40 0,40 0,0"/>
+  </object>
+  <object id="236" x="0" y="200">
+   <polygon points="0,0 120,0 120,-40 880,-40 880,0 960,0 960,-80 0,-80"/>
+  </object>
+ </objectgroup>
+ <objectgroup color="#00ffff" id="16" name="blockcollision">
+  <object id="212" x="360" y="280">
+   <polyline points="0,0 160,0 160,40 0,40"/>
+  </object>
+  <object id="213" x="360" y="280">
+   <polyline points="0,0 0,40"/>
+  </object>
+ </objectgroup>
+ <objectgroup color="#ff00ff" id="7" name="objects">
+  <object id="216" name="pushable" x="360" y="280" width="40" height="40">
+   <properties>
+    <property name="flagcheck" value="!#ruins.rock_puzzle_a"/>
+    <property name="sprite" value="objects/rock"/>
+   </properties>
+  </object>
+  <object id="217" name="tilebutton" x="500" y="280" width="20" height="40">
+   <properties>
+    <property name="blocks" type="bool" value="true"/>
+    <property name="cutscene" value="undertale.ruins_10_rock_push_puzzle"/>
+    <property name="group" value="ruins_rockbutton1"/>
+    <property name="once" type="bool" value="true"/>
+    <property name="sprite" value=""/>
+   </properties>
+  </object>
+  <object id="218" name="spikes" x="600" y="160" width="40" height="40">
+   <properties>
+    <property name="default" type="bool" value="true"/>
+    <property name="flag" value="#ruins.rock_puzzle_a"/>
+    <property name="spikedeath" type="bool" value="false"/>
+    <property name="walkthrough" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="225" name="spikes" x="600" y="240" width="40" height="40">
+   <properties>
+    <property name="default" type="bool" value="true"/>
+    <property name="flag" value="#ruins.rock_puzzle_a"/>
+    <property name="spikedeath" type="bool" value="false"/>
+    <property name="walkthrough" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="227" name="spikes" x="600" y="320" width="40" height="40">
+   <properties>
+    <property name="default" type="bool" value="true"/>
+    <property name="flag" value="#ruins.rock_puzzle_a"/>
+    <property name="spikedeath" type="bool" value="false"/>
+    <property name="walkthrough" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="223" name="spikes" x="600" y="200" width="40" height="40">
+   <properties>
+    <property name="default" type="bool" value="true"/>
+    <property name="flag" value="#ruins.rock_puzzle_a"/>
+    <property name="spikedeath" type="bool" value="false"/>
+    <property name="walkthrough" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="224" name="spikes" x="600" y="280" width="40" height="40">
+   <properties>
+    <property name="default" type="bool" value="true"/>
+    <property name="flag" value="#ruins.rock_puzzle_a"/>
+    <property name="spikedeath" type="bool" value="false"/>
+    <property name="walkthrough" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="226" name="spikes" x="600" y="360" width="40" height="40">
+   <properties>
+    <property name="default" type="bool" value="true"/>
+    <property name="flag" value="#ruins.rock_puzzle_a"/>
+    <property name="spikedeath" type="bool" value="false"/>
+    <property name="walkthrough" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="219" name="ROCK" gid="518" x="480" y="320" width="40" height="40"/>
+  <object id="238" name="interactable" x="320" y="120" width="40" height="40">
+   <properties>
+    <property name="solid" type="bool" value="true"/>
+    <property name="text1">* Three out of four grey rocks
+recommend you die.</property>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup color="#7f00ff" id="2" name="markers"/>
+ <objectgroup color="#00ff00" id="17" name="controllers">
+  <object id="220" name="toggle" x="449.252" y="240.831">
+   <properties>
+    <property name="flag" value="#ruins.rock_puzzle_a"/>
+    <property name="target1" type="object" value="219"/>
+    <property name="target2" type="object" value="222"/>
+    <property name="value" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+ </objectgroup>
+</map>

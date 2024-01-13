@@ -174,7 +174,15 @@ function LightEncounter:onFlee()
                 Game.lw_money = 0
             end
 
-            self.used_flee_message = "* Ran away with " .. xp .. " EXP\n  and " .. money .. " " .. Game:getConfig("lightCurrency"):upper() .. "."
+            if Mod.language == "engrish" then
+                self.used_flee_message = "* Omae pussied out w " .. xp .. " PP\n  and " .. money .. " " .. Mod:getLightCurrency():upper() .. "."
+            elseif Mod.language == "spanish" then
+                self.used_flee_message = "* Ran away with " .. xp .. " EXP\n  and " .. money .. " " .. Mod:getLightCurrency():upper() .. "."
+            elseif Mod.language == "portuguese" then
+                self.used_flee_message = "* Ran away with " .. xp .. " EXP\n  and " .. money .. " " .. Mod:getLightCurrency():upper() .. "."
+            else
+                self.used_flee_message = "* Ran away with " .. xp .. " EXP\n  and " .. money .. " " .. Mod:getLightCurrency():upper() .. "."
+            end
 
             for _,member in ipairs(Game.battle.party) do
                 local lv = member.chara:getLightLV()

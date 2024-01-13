@@ -2,40 +2,134 @@ local LightShop, super = Class(Object)
 
 function LightShop:init()
     super.init(self)
-    self.currency_text = Game:getConfig("lightCurrencyShort") ~= "$" and "%d"..Game:getConfig("lightCurrencyShort") or Game:getConfig("lightCurrencyShort").."%d"
-    self.sell_currency_text = Game:getConfig("lightCurrencyShort") ~= "$" and "(%d "..Game:getConfig("lightCurrencyShort")..")" or "("..Game:getConfig("lightCurrencyShort").." %d)"
+    self.currency_text = Mod:getLightCurrencyShort() ~= "$" and "%d"..Mod:getLightCurrencyShort() or Mod:getLightCurrencyShort().."%d"
+    self.sell_currency_text = Mod:getLightCurrencyShort() ~= "$" and "(%d "..Mod:getLightCurrencyShort()..")" or "("..Mod:getLightCurrencyShort().." %d)"
 
-    -- Shown when you first enter a shop
-    self.encounter_text = "* Encounter text"
-    -- Shown when you return to the main menu of the shop
-    self.shop_text = "* Shop text"
-    -- Shown when you leave a shop
-    self.leaving_text = "* Leaving text"
-    -- Shown when you're in the BUY menu
-    self.buy_menu_text = "Purchase\ntext"
-    -- Shown when you're about to buy something.
-    self.buy_confirmation_text = "Buy it for\n%s ?"
-    self.buy_confirmation_yes_text = "Yes"
-    self.buy_confirmation_no_text = "No"
-    -- Shown when you refuse to buy something
-    self.buy_refuse_text = "Buy\nrefused\ntext"
-    -- Shown when you buy something
-    self.buy_text = "Buy text"
-    -- Shown when you buy something and it goes in your storage
-    self.buy_storage_text = "Storage\nbuy text"
-    -- Shown when you don't have enough money to buy something
-    self.buy_too_expensive_text = "Not\nenough\nmoney."
-    -- Shown when you don't have enough space to buy something.
-    self.buy_no_space_text = "You're\ncarrying\ntoo much."
-    -- Shown when you're about to sell something.
-    self.sell_confirmation_text = "Sell %s for %s ?"
-    self.sell_confirmation_yes_text = "Yes"
-    self.sell_confirmation_no_text = "No"
-    -- Shown when you have nothing in a storage
-    self.sell_no_storage_text = "* Empty inventory text"
-    --
-    -- Shown when you enter the talk menu.
-    self.talk_text = "Talk\ntext"
+    if Mod.language == "engrish" then-- Shown when you first enter a shop
+        self.encounter_text = "* Encounter text"
+        -- Shown when you return to the main menu of the shop
+        self.shop_text = "* Shop text"
+        -- Shown when you leave a shop
+        self.leaving_text = "* Leaving text"
+        -- Shown when you're in the BUY menu
+        self.buy_menu_text = "Purchase\ntext"
+        -- Shown when you're about to buy something.
+        self.buy_confirmation_text = "Buy it for\n%s ?"
+        self.buy_confirmation_yes_text = "Yes"
+        self.buy_confirmation_no_text = "No"
+        -- Shown when you refuse to buy something
+        self.buy_refuse_text = "Buy\nrefused\ntext"
+        -- Shown when you buy something
+        self.buy_text = "Buy text"
+        -- Shown when you buy something and it goes in your storage
+        self.buy_storage_text = "Storage\nbuy text"
+        -- Shown when you don't have enough money to buy something
+        self.buy_too_expensive_text = "Not\nenough\nmoney."
+        -- Shown when you don't have enough space to buy something.
+        self.buy_no_space_text = "You're\ncarrying\ntoo much."
+        -- Shown when you're about to sell something.
+        self.sell_confirmation_text = "Sell %s for %s ?"
+        self.sell_confirmation_yes_text = "Yes"
+        self.sell_confirmation_no_text = "No"
+        -- Shown when you have nothing in a storage
+        self.sell_no_storage_text = "* Empty inventory text"
+        --
+        -- Shown when you enter the talk menu.
+        self.talk_text = "Talk\ntext"
+    elseif Mod.language == "spanish" then-- Shown when you first enter a shop
+        self.encounter_text = "* Encounter text"
+        -- Shown when you return to the main menu of the shop
+        self.shop_text = "* Shop text"
+        -- Shown when you leave a shop
+        self.leaving_text = "* Leaving text"
+        -- Shown when you're in the BUY menu
+        self.buy_menu_text = "Purchase\ntext"
+        -- Shown when you're about to buy something.
+        self.buy_confirmation_text = "Buy it for\n%s ?"
+        self.buy_confirmation_yes_text = "Yes"
+        self.buy_confirmation_no_text = "No"
+        -- Shown when you refuse to buy something
+        self.buy_refuse_text = "Buy\nrefused\ntext"
+        -- Shown when you buy something
+        self.buy_text = "Buy text"
+        -- Shown when you buy something and it goes in your storage
+        self.buy_storage_text = "Storage\nbuy text"
+        -- Shown when you don't have enough money to buy something
+        self.buy_too_expensive_text = "Not\nenough\nmoney."
+        -- Shown when you don't have enough space to buy something.
+        self.buy_no_space_text = "You're\ncarrying\ntoo much."
+        -- Shown when you're about to sell something.
+        self.sell_confirmation_text = "Sell %s for %s ?"
+        self.sell_confirmation_yes_text = "Yes"
+        self.sell_confirmation_no_text = "No"
+        -- Shown when you have nothing in a storage
+        self.sell_no_storage_text = "* Empty inventory text"
+        --
+        -- Shown when you enter the talk menu.
+        self.talk_text = "Talk\ntext"
+    elseif Mod.language == "portuguese" then-- Shown when you first enter a shop
+        self.encounter_text = "* Encounter text"
+        -- Shown when you return to the main menu of the shop
+        self.shop_text = "* Shop text"
+        -- Shown when you leave a shop
+        self.leaving_text = "* Leaving text"
+        -- Shown when you're in the BUY menu
+        self.buy_menu_text = "Purchase\ntext"
+        -- Shown when you're about to buy something.
+        self.buy_confirmation_text = "Buy it for\n%s ?"
+        self.buy_confirmation_yes_text = "Yes"
+        self.buy_confirmation_no_text = "No"
+        -- Shown when you refuse to buy something
+        self.buy_refuse_text = "Buy\nrefused\ntext"
+        -- Shown when you buy something
+        self.buy_text = "Buy text"
+        -- Shown when you buy something and it goes in your storage
+        self.buy_storage_text = "Storage\nbuy text"
+        -- Shown when you don't have enough money to buy something
+        self.buy_too_expensive_text = "Not\nenough\nmoney."
+        -- Shown when you don't have enough space to buy something.
+        self.buy_no_space_text = "You're\ncarrying\ntoo much."
+        -- Shown when you're about to sell something.
+        self.sell_confirmation_text = "Sell %s for %s ?"
+        self.sell_confirmation_yes_text = "Yes"
+        self.sell_confirmation_no_text = "No"
+        -- Shown when you have nothing in a storage
+        self.sell_no_storage_text = "* Empty inventory text"
+        --
+        -- Shown when you enter the talk menu.
+        self.talk_text = "Talk\ntext"
+    else-- Shown when you first enter a shop
+        self.encounter_text = "* Encounter text"
+        -- Shown when you return to the main menu of the shop
+        self.shop_text = "* Shop text"
+        -- Shown when you leave a shop
+        self.leaving_text = "* Leaving text"
+        -- Shown when you're in the BUY menu
+        self.buy_menu_text = "Purchase\ntext"
+        -- Shown when you're about to buy something.
+        self.buy_confirmation_text = "Buy it for\n%s ?"
+        self.buy_confirmation_yes_text = "Yes"
+        self.buy_confirmation_no_text = "No"
+        -- Shown when you refuse to buy something
+        self.buy_refuse_text = "Buy\nrefused\ntext"
+        -- Shown when you buy something
+        self.buy_text = "Buy text"
+        -- Shown when you buy something and it goes in your storage
+        self.buy_storage_text = "Storage\nbuy text"
+        -- Shown when you don't have enough money to buy something
+        self.buy_too_expensive_text = "Not\nenough\nmoney."
+        -- Shown when you don't have enough space to buy something.
+        self.buy_no_space_text = "You're\ncarrying\ntoo much."
+        -- Shown when you're about to sell something.
+        self.sell_confirmation_text = "Sell %s for %s ?"
+        self.sell_confirmation_yes_text = "Yes"
+        self.sell_confirmation_no_text = "No"
+        -- Shown when you have nothing in a storage
+        self.sell_no_storage_text = "* Empty inventory text"
+        --
+        -- Shown when you enter the talk menu.
+        self.talk_text = "Talk\ntext"
+    end
     -- If has a string/table of strings, it will prevent selling and will start a dialogue
     self.sell_no_selling_text = nil
     

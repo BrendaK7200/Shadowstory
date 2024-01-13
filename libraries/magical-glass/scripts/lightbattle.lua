@@ -1096,7 +1096,19 @@ function LightBattle:onStateChange(old,new)
             self.money = self.encounter:getVictoryMoney(self.money) or self.money
             self.xp = self.encounter:getVictoryXP(self.xp) or self.xp
 
-            win_text = "[noskip]* YOU WON!\n* You earned " .. self.xp .. " EXP and " .. self.money .. " " .. Game:getConfig("lightCurrency"):lower() .. "."
+            if Mod.language == "engrish" then
+                if self.xp > 0 then
+                    win_text = "[noskip]* you murderdeathkilled the enemy!\n* Acquired PP (" .. self.xp .. ") and " .. self.money .. " "..Mod:getLightCurrency():lower().."."
+                else
+                    win_text = "[noskip]* you are good.\n* Thank  you and also, have " .. self.money .. " "..Mod:getLightCurrency():lower().."."
+                end
+            elseif Mod.language == "spanish" then
+                win_text = "[noskip]* YOU WON!\n* You earned " .. self.xp .. " PP and " .. self.money .. " " .. Mod:getLightCurrency():lower() .. "."
+            elseif Mod.language == "portuguese" then
+                win_text = "[noskip]* YOU WON!\n* You earned " .. self.xp .. " PP and " .. self.money .. " " .. Mod:getLightCurrency():lower() .. "."
+            else
+                win_text = "[noskip]* YOU WON!\n* You earned " .. self.xp .. " PP and " .. self.money .. " " .. Mod:getLightCurrency():lower() .. "."
+            end
 
             Game.lw_money = Game.lw_money + self.money
 
@@ -1109,7 +1121,15 @@ function LightBattle:onStateChange(old,new)
                 member.chara:gainLightEXP(self.xp, true)
 
                 if lv ~= member.chara:getLightLV() then
-                    win_text = "[noskip]* YOU WON!\n* You earned " .. self.xp .. " EXP and " .. self.money .. " " .. Game:getConfig("lightCurrency"):lower() .. ".\n* Your LOVE increased."
+                    if Mod.language == "engrish" then
+                        win_text = "[noskip]* ...\n* You earned " .. self.xp .. " PP and " .. self.money .. " " .. Mod:getLightCurrency():lower() .. ".\n* Your CARE increased."
+                    elseif Mod.language == "spanish" then
+                        win_text = "[noskip]* YOU WON!\n* You earned " .. self.xp .. " PP and " .. self.money .. " " .. Mod:getLightCurrency():lower() .. ".\n* Your CARE increased."
+                    elseif Mod.language == "portuguese" then
+                        win_text = "[noskip]* YOU WON!\n* You earned " .. self.xp .. " PP and " .. self.money .. " " .. Mod:getLightCurrency():lower() .. ".\n* Your CARE increased."
+                    else
+                        win_text = "[noskip]* YOU WON!\n* You earned " .. self.xp .. " PP and " .. self.money .. " " .. Mod:getLightCurrency():lower() .. ".\n* Your CARE increased."
+                    end
                 end
             end
 

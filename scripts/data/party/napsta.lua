@@ -6,6 +6,7 @@ function character:init()
     self.name = "Napsta"
 
     self:setActor("kris")
+    self:setLightActor("napsta_lw")
 
     -- Dark World stuff (SHOULD NEVER BE SEEN IN-GAME, THIS IS JUST THE DEFAULT PARTY MEMBER STUFF)
     self.level = Game.chapter

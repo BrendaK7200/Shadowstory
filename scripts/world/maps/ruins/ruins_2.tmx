@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="16" height="12" tilewidth="40" tileheight="40" infinite="0" nextlayerid="16" nextobjectid="190">
+ <editorsettings>
+  <export target="ruins_2.lua" format="lua"/>
+ </editorsettings>
+ <properties>
+  <property name="border" value="undertale/ruins"/>
+  <property name="light" type="bool" value="true"/>
+  <property name="music" value="ruins"/>
+  <property name="name" value="Ruins"/>
+ </properties>
+ <tileset firstgid="1" source="../../tilesets/ruins1.tsx"/>
+ <tileset firstgid="153" source="../../tilesets/ruins2.tsx"/>
+ <tileset firstgid="249" source="../../tilesets/ruins3.tsx"/>
+ <tileset firstgid="321" source="../../tilesets/ruins4.tsx"/>
+ <tileset firstgid="361" source="../../tilesets/ruins5.tsx"/>
+ <tileset firstgid="489" source="../../tilesets/objects.tsx"/>
+ <layer id="1" name="Tile Layer 1" width="16" height="12">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,361,361,265,257,257,265,361,361,361,0,0,0,0,
+0,0,430,361,361,273,257,282,265,361,396,361,361,0,0,0,
+0,0,430,361,361,257,257,265,361,361,392,361,361,0,0,0,
+0,0,430,361,361,257,257,265,361,361,392,361,361,0,0,0,
+0,0,430,361,361,281,257,274,265,361,392,361,361,0,0,0,
+0,0,430,463,361,265,281,257,274,361,399,361,361,0,0,0,
+0,0,0,0,363,463,265,257,257,361,361,361,0,0,0,0,
+0,0,0,0,0,0,0,257,257,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="12" name="Tile Layer 2" width="16" height="12">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,301,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,448,0,0,0,0,0,0,0,447,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,447,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,430,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,430,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,430,0,0,
+0,0,416,440,0,0,0,0,0,0,0,0,439,448,0,0,
+0,0,0,0,416,440,0,0,0,0,0,439,448,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="13" name="Tile Layer 3" width="16" height="12">
+  <data encoding="csv">
+0,0,30,151,151,152,0,0,150,23,23,23,31,0,0,0,
+0,30,152,251,251,252,0,0,250,251,251,251,150,31,0,0,
+0,144,252,251,301,252,0,0,250,251,251,251,250,150,31,0,
+0,144,252,259,259,260,0,0,258,259,259,259,250,250,142,0,
+0,144,260,0,0,0,0,0,0,0,0,0,258,250,142,0,
+0,144,0,0,0,0,0,0,0,0,0,0,0,258,142,0,
+0,144,0,0,0,0,0,0,0,0,0,0,0,0,142,0,
+0,144,0,0,0,0,0,0,0,0,0,0,0,0,142,0,
+0,144,0,0,0,0,0,0,0,0,0,0,0,0,142,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <objectgroup id="15" name="objects_deco">
+  <object id="153" name="ruinsdoor" gid="508" x="240" y="160" width="80" height="120">
+   <properties>
+    <property name="flagcheck" value="!completedRuinsRoom2Puzzle2"/>
+   </properties>
+  </object>
+  <object id="172" name="tilebutton" x="360" y="200" width="40" height="40">
+   <properties>
+    <property name="blocks" type="bool" value="false"/>
+    <property name="cutscene" value="undertale.ruins_2_puzzle"/>
+    <property name="group" value="ruins_2_work"/>
+    <property name="keepdown" type="bool" value="true"/>
+    <property name="npcs" type="bool" value="true"/>
+    <property name="once" type="bool" value="true"/>
+    <property name="onsound" value="noise"/>
+    <property name="player" type="bool" value="true"/>
+    <property name="pressedsprite" value="world/events/utpressed"/>
+    <property name="sprite" value="world/events/utidle"/>
+   </properties>
+  </object>
+  <object id="177" name="tilebutton" x="360" y="280" width="40" height="40">
+   <properties>
+    <property name="blocks" type="bool" value="false"/>
+    <property name="cutscene" value="undertale.ruins_2_puzzle"/>
+    <property name="group" value="ruins_2_work"/>
+    <property name="keepdown" type="bool" value="true"/>
+    <property name="npcs" type="bool" value="true"/>
+    <property name="once" type="bool" value="true"/>
+    <property name="onsound" value="noise"/>
+    <property name="player" type="bool" value="true"/>
+    <property name="pressedsprite" value="world/events/utpressed"/>
+    <property name="sprite" value="world/events/utidle"/>
+   </properties>
+  </object>
+  <object id="173" name="tilebutton" x="440" y="200" width="40" height="40">
+   <properties>
+    <property name="blocks" type="bool" value="false"/>
+    <property name="cutscene" value="undertale.ruins_2_puzzle"/>
+    <property name="group" value="ruins_2_work"/>
+    <property name="keepdown" type="bool" value="true"/>
+    <property name="npcs" type="bool" value="true"/>
+    <property name="once" type="bool" value="true"/>
+    <property name="onsound" value="noise"/>
+    <property name="player" type="bool" value="true"/>
+    <property name="pressedsprite" value="world/events/utpressed"/>
+    <property name="sprite" value="world/events/utidle"/>
+   </properties>
+  </object>
+  <object id="176" name="tilebutton" x="440" y="280" width="40" height="40">
+   <properties>
+    <property name="blocks" type="bool" value="false"/>
+    <property name="cutscene" value="undertale.ruins_2_puzzle"/>
+    <property name="group" value="ruins_2_work"/>
+    <property name="keepdown" type="bool" value="true"/>
+    <property name="npcs" type="bool" value="true"/>
+    <property name="once" type="bool" value="true"/>
+    <property name="onsound" value="noise"/>
+    <property name="player" type="bool" value="true"/>
+    <property name="pressedsprite" value="world/events/utpressed"/>
+    <property name="sprite" value="world/events/utidle"/>
+   </properties>
+  </object>
+  <object id="174" name="tilebutton" x="400" y="240" width="40" height="40">
+   <properties>
+    <property name="blocks" type="bool" value="false"/>
+    <property name="group" value="ruins_2_nowork"/>
+    <property name="keepdown" type="bool" value="true"/>
+    <property name="npcs" type="bool" value="true"/>
+    <property name="once" type="bool" value="false"/>
+    <property name="onsound" value="noise"/>
+    <property name="player" type="bool" value="true"/>
+    <property name="pressedsprite" value="world/events/utpressed"/>
+    <property name="sprite" value="world/events/utidle"/>
+   </properties>
+  </object>
+  <object id="175" name="tilebutton" x="400" y="320" width="40" height="40">
+   <properties>
+    <property name="blocks" type="bool" value="false"/>
+    <property name="group" value="ruins_2_nowork"/>
+    <property name="keepdown" type="bool" value="true"/>
+    <property name="npcs" type="bool" value="true"/>
+    <property name="once" type="bool" value="false"/>
+    <property name="onsound" value="noise"/>
+    <property name="player" type="bool" value="true"/>
+    <property name="pressedsprite" value="world/events/utpressed"/>
+    <property name="sprite" value="world/events/utidle"/>
+   </properties>
+  </object>
+  <object id="183" name="lever" gid="509" x="412" y="134" width="14" height="30"/>
+  <object id="184" name="interactable" x="240" y="120" width="80" height="40">
+   <properties>
+    <property name="flagcheck" value="!completedRuinsRoom2Puzzle2"/>
+    <property name="solid" type="bool" value="true"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup color="#0000ff" id="4" name="collision">
+  <object id="156" x="520" y="200" width="40" height="40"/>
+  <object id="157" x="480" y="160" width="40" height="40"/>
+  <object id="158" x="440" y="120" width="40" height="40"/>
+  <object id="159" x="320" y="120" width="80" height="40"/>
+  <object id="161" x="80" y="160" width="40" height="40"/>
+  <object id="162" x="40" y="200" width="40" height="160"/>
+  <object id="163" x="120" y="400" width="40" height="40"/>
+  <object id="164" x="200" y="440" width="80" height="40"/>
+  <object id="165" x="360" y="440" width="120" height="40"/>
+  <object id="166" x="560" y="240" width="40" height="120"/>
+  <object id="167" x="80" y="360">
+   <polygon points="0,0 40,40 0,40"/>
+  </object>
+  <object id="168" x="160" y="400">
+   <polygon points="0,0 40,40 0,40"/>
+  </object>
+  <object id="171" x="560" y="360">
+   <polygon points="0,0 -80,80 0,80 0,0"/>
+  </object>
+  <object id="178" x="200" y="80" width="160" height="40"/>
+  <object id="187" x="120" y="120" width="40" height="40"/>
+  <object id="188" x="200" y="120" width="40" height="40"/>
+ </objectgroup>
+ <objectgroup color="#ff00ff" id="7" name="objects">
+  <object id="151" name="transition" x="240" y="116" width="80" height="40">
+   <properties>
+    <property name="facing" value="up"/>
+    <property name="map" value="ruins/ruins_3"/>
+    <property name="marker" value="entryup"/>
+   </properties>
+  </object>
+  <object id="152" name="transition" x="280" y="440" width="80" height="40">
+   <properties>
+    <property name="facing" value="down"/>
+    <property name="map" value="ruins/ruins_1"/>
+    <property name="marker" value="entrydown"/>
+   </properties>
+  </object>
+  <object id="182" name="interactable" x="400" y="120" width="40" height="40">
+   <properties>
+    <property name="cutscene" value="undertale.ruins_2_press_switch"/>
+    <property name="once" type="bool" value="false"/>
+    <property name="solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="185" name="interactable" x="160" y="120" width="40" height="40">
+   <properties>
+    <property name="solid" type="bool" value="true"/>
+    <property name="text1">* Only the fearless may proceed.
+* Brave ones, foolish ones.
+* Both walk not the middle road</property>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup color="#7f00ff" id="2" name="markers">
+  <object id="66" name="entrydown" x="280" y="200">
+   <point/>
+  </object>
+  <object id="117" name="entryup" x="320" y="400">
+   <point/>
+  </object>
+  <object id="181" name="spawn" x="240" y="320">
+   <point/>
+  </object>
+ </objectgroup>
+</map>

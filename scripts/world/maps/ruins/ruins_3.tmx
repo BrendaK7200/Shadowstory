@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="37" height="12" tilewidth="40" tileheight="40" infinite="0" nextlayerid="15" nextobjectid="180">
+ <editorsettings>
+  <export target="ruins_3.lua" format="lua"/>
+ </editorsettings>
+ <properties>
+  <property name="border" value="undertale/ruins"/>
+  <property name="light" type="bool" value="true"/>
+  <property name="music" value="ruins"/>
+  <property name="name" value="Ruins"/>
+ </properties>
+ <tileset firstgid="1" source="../../tilesets/ruins1.tsx"/>
+ <tileset firstgid="153" source="../../tilesets/ruins2.tsx"/>
+ <tileset firstgid="249" source="../../tilesets/ruins3.tsx"/>
+ <tileset firstgid="321" source="../../tilesets/ruins4.tsx"/>
+ <tileset firstgid="361" source="../../tilesets/ruins5.tsx"/>
+ <tileset firstgid="489" source="../../tilesets/objects.tsx"/>
+ <tileset firstgid="516" source="../../tilesets/fakewater.tsx"/>
+ <layer id="1" name="Tile Layer 1" width="37" height="12">
+  <data encoding="csv">
+143,30,151,151,151,151,151,151,151,151,151,151,151,151,151,151,151,151,151,151,151,151,151,151,151,151,151,151,151,151,151,151,151,151,151,31,143,
+143,144,322,323,323,323,323,323,323,323,323,323,323,323,323,323,323,323,323,323,323,323,323,323,323,323,323,323,323,323,323,323,323,323,324,142,143,
+143,144,322,323,323,323,323,323,323,323,323,323,323,323,323,323,323,323,323,323,323,323,323,323,323,323,323,323,323,323,323,323,323,323,324,142,143,
+143,144,330,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,332,342,343,
+143,144,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,322,323,
+143,144,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,322,323,
+143,144,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,330,331,
+143,144,265,265,265,265,273,257,257,257,257,257,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,337,337,337,
+143,144,265,265,265,265,257,257,257,257,257,257,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,337,337,
+143,144,265,265,265,265,257,257,275,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,142,143,
+143,144,265,265,265,265,257,257,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,265,142,143,
+143,38,135,135,135,256,9,9,254,135,135,135,135,135,135,135,135,135,135,135,135,135,135,135,135,135,135,135,135,135,135,135,135,135,135,39,143
+</data>
+ </layer>
+ <layer id="12" name="Tile Layer 2" width="37" height="12">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,87,0,0,87,0,0,0,0,93,96,0,0,0,0,0,87,0,0,0,0,87,0,0,0,0,93,94,96,0,0,
+0,0,0,0,0,301,0,87,0,0,87,0,0,0,0,93,96,0,0,0,0,0,87,0,0,0,0,87,0,0,0,0,93,94,96,0,0,
+0,0,0,0,0,0,0,87,0,0,87,0,68,70,0,93,96,0,0,0,0,0,87,0,68,70,0,87,0,0,0,0,93,94,96,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,519,525,0,0,0,0,0,396,0,0,0,0,519,525,0,0,0,396,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,516,528,0,0,0,0,0,329,0,0,0,0,516,528,0,0,0,329,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,516,528,0,0,0,0,356,329,355,0,0,0,516,528,0,0,356,329,355,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,73,73,9,9,9,9,9,9,9,9,9,9,73,73,9,9,9,9,9,9,2684354889,2684354889,2684354889,2684354889,2684354889,
+0,0,0,0,0,0,0,0,0,0,0,0,74,74,9,9,9,9,9,9,9,9,9,9,74,74,9,9,9,9,9,9,2684354889,2684354889,2684354889,2684354889,2684354889,
+0,0,0,0,0,0,0,0,0,0,0,0,516,528,0,0,0,0,0,0,0,0,0,0,516,528,0,0,0,0,0,0,0,0,0,326,327,
+0,0,0,0,0,0,0,0,0,0,0,0,516,528,0,0,0,0,0,0,0,0,0,0,516,528,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <objectgroup id="14" name="objects_misc">
+  <object id="153" name="spikes" x="1400" y="280" width="40" height="40">
+   <properties>
+    <property name="default" type="bool" value="true"/>
+    <property name="flag" value="completedRuinsRoom3Puzzle"/>
+    <property name="spikedeath" type="bool" value="false"/>
+    <property name="walkthrough" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="154" name="spikes" x="1400" y="320" width="40" height="40">
+   <properties>
+    <property name="default" type="bool" value="true"/>
+    <property name="flag" value="completedRuinsRoom3Puzzle"/>
+    <property name="spikedeath" type="bool" value="false"/>
+    <property name="walkthrough" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="155" name="lever" gid="509" x="776" y="140" width="14" height="30"/>
+  <object id="158" name="lever_b" gid="509" x="1176" y="140" width="14" height="30"/>
+  <object id="159" name="lever_f" gid="509" x="1252" y="140" width="14" height="30"/>
+  <object id="156" gid="511" x="714" y="144" width="74" height="54"/>
+  <object id="157" gid="511" x="1114" y="144" width="74" height="54"/>
+ </objectgroup>
+ <objectgroup color="#1827f4" id="4" name="collision">
+  <object id="122" x="40" y="440" width="200" height="40"/>
+  <object id="126" x="320" y="440" width="1080" height="40"/>
+  <object id="128" x="480" y="160" width="80" height="120"/>
+  <object id="129" x="480" y="360" width="80" height="80"/>
+  <object id="130" x="960" y="360" width="80" height="80"/>
+  <object id="131" x="960" y="160" width="80" height="120"/>
+  <object id="140" x="80" y="120" width="120" height="40"/>
+  <object id="144" x="1400" y="160" width="40" height="120"/>
+  <object id="145" x="1440" y="240" width="40" height="40"/>
+  <object id="146" x="1400" y="360" width="40" height="120"/>
+  <object id="147" x="1440" y="360" width="40" height="40"/>
+  <object id="161" x="1200" y="120" width="40" height="40"/>
+  <object id="162" x="1280" y="120" width="120" height="40"/>
+  <object id="167" x="240" y="120" width="470" height="40"/>
+  <object id="168" x="800" y="120" width="310" height="40"/>
+  <object id="179" x="40" y="160" width="40" height="280"/>
+ </objectgroup>
+ <objectgroup color="#ff00ff" id="7" name="objects">
+  <object id="133" name="transition" x="240" y="460" width="80" height="40">
+   <properties>
+    <property name="facing" value="down"/>
+    <property name="map" value="ruins/ruins_2"/>
+    <property name="marker" value="entrydown"/>
+   </properties>
+  </object>
+  <object id="134" gid="489" x="260" y="280" width="40" height="40"/>
+  <object id="138" name="interactable" x="200" y="120" width="40" height="40">
+   <properties>
+    <property name="solid" type="bool" value="true"/>
+    <property name="text1" value="* Stay on the path."/>
+   </properties>
+  </object>
+  <object id="136" name="interactable" x="260" y="247.999" width="40" height="32.0011">
+   <properties>
+    <property name="solid" type="bool" value="true"/>
+    <property name="text1" value="* &quot;Press [Z] to read signs!&quot;"/>
+   </properties>
+  </object>
+  <object id="148" name="interactable" x="760" y="120" width="40" height="40">
+   <properties>
+    <property name="cutscene" value="undertale.ruins_3_press_switch_1"/>
+    <property name="once" type="bool" value="false"/>
+    <property name="solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="149" name="interactable" x="1160" y="120" width="40" height="40">
+   <properties>
+    <property name="cutscene" value="undertale.ruins_3_press_switch_2"/>
+    <property name="once" type="bool" value="false"/>
+    <property name="solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="160" name="interactable" x="1240" y="120" width="40" height="40">
+   <properties>
+    <property name="cutscene" value="undertale.ruins_3_press_switch_3"/>
+    <property name="once" type="bool" value="false"/>
+    <property name="solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="165" name="interactable" x="710" y="120" width="50" height="40">
+   <properties>
+    <property name="solid" type="bool" value="true"/>
+    <property name="text1">* Please press this switch.
+
+          - TORIEL</property>
+   </properties>
+  </object>
+  <object id="166" name="interactable" x="1110" y="120" width="50" height="40">
+   <properties>
+    <property name="solid" type="bool" value="true"/>
+    <property name="text1">* Please press this switch
+too.
+           - TORIEL</property>
+   </properties>
+  </object>
+  <object id="170" name="transition" x="1440" y="280" width="40" height="80">
+   <properties>
+    <property name="facing" value="right"/>
+    <property name="map" value="ruins/ruins_4"/>
+    <property name="marker" value="entryright"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup color="#7f00ff" id="2" name="markers">
+  <object id="142" name="entryup" x="280" y="440">
+   <point/>
+  </object>
+  <object id="143" name="spawn" x="280" y="400">
+   <point/>
+  </object>
+  <object id="172" name="entryleft" x="1420" y="320">
+   <point/>
+  </object>
+ </objectgroup>
+</map>

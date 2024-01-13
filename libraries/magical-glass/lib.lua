@@ -266,7 +266,21 @@ function lib:init()
                 Game.lw_money = 0
             end
 
-            local win_text = "* You won!\n* Got " .. self.xp .. " EXP and " .. self.money .. " "..Game:getConfig("lightCurrency"):lower().."."
+            local win_text
+            if Mod.language == "engrish" then
+                if self.xp > 0 then
+                    win_text = "* you murderdeathkilled the enemy!\n* Acquired PP (" .. self.xp .. ") and " .. self.money .. " "..Mod:getLightCurrency():lower().."."
+                else
+                    win_text = "* you are good.\n* Thank  you and also, have " .. self.money .. " "..Mod:getLightCurrency():lower().."."
+                end
+            elseif Mod.language == "spanish" then
+                win_text = "* You won!\n* Got " .. self.xp .. " PP and " .. self.money .. " "..Mod:getLightCurrency():lower().."."
+            elseif Mod.language == "portuguese" then
+                win_text = "* You won!\n* Got " .. self.xp .. " PP and " .. self.money .. " "..Mod:getLightCurrency():lower().."."
+            else
+                win_text = "* You won!\n* Got " .. self.xp .. " PP and " .. self.money .. " "..Mod:getLightCurrency():lower().."."
+            end
+            
             -- if (in_dojo) then
             --     win_text == "* You won the battle!"
             -- end
@@ -276,7 +290,15 @@ function lib:init()
                 member.chara:gainLightEXP(self.xp, true)
 
                 if lv ~= member.chara:getLightLV() then
-                    win_text = "* You won!\n* Got " .. self.xp .. " EXP and " .. self.money .. " "..Game:getConfig("lightCurrency"):lower()..".\n* Your LOVE increased."
+                    if Mod.language == "engrish" then
+                        win_text = "* ...\n* Got " .. self.xp .. " PP and " .. self.money .. " "..Mod:getLightCurrency():lower()..".\n* Your CARE increased."
+                    elseif Mod.language == "spanish" then
+                        win_text = "* You won!\n* Got " .. self.xp .. " PP and " .. self.money .. " "..Mod:getLightCurrency():lower()..".\n* Your CARE increased."
+                    elseif Mod.language == "portuguese" then
+                        win_text = "* You won!\n* Got " .. self.xp .. " PP and " .. self.money .. " "..Mod:getLightCurrency():lower()..".\n* Your CARE increased."
+                    else
+                        win_text = "* You won!\n* Got " .. self.xp .. " PP and " .. self.money .. " "..Mod:getLightCurrency():lower()..".\n* Your CARE increased."
+                    end
                 end
             end
 
@@ -2195,7 +2217,7 @@ function lib:init()
         love.graphics.print("LV  "..chara:getLightLV(), 46, 100 + offset)
         love.graphics.print("HP  "..chara:getHealth().."/"..chara:getStat("health"), 46, 118 + offset)
         -- pastency when -sam, to sam
-        love.graphics.print(Game:getConfig("lightCurrencyShort"), 46, 136 + offset)
+        love.graphics.print(Mod:getLightCurrencyShort(), 46, 136 + offset)
         love.graphics.print(Game.lw_money, 82, 136 + offset)
         
         love.graphics.setFont(self.font)
@@ -2373,7 +2395,7 @@ function lib:init()
         love.graphics.print("AT  "  .. at  .. " ("..chara:getEquipmentBonus("attack")  .. ")", 4, 164 - offset)
         love.graphics.print("DF  "  .. df  .. " ("..chara:getEquipmentBonus("defense") .. ")", 4, 196 - offset)
         love.graphics.print("EXP: " .. chara:getLightEXP(), 172, 164)
-        love.graphics.print("NEXT: ".. exp_needed, 172, 196)
+        love.graphics.print(scr_gettext("MENU_4") ..": ".. exp_needed, 172, 196)
     
         local weapon_name = "(NONE)"
         local armor_name = "(NONE)"
@@ -2386,12 +2408,12 @@ function lib:init()
             armor_name = chara:getArmor(1):getEquipDisplayName() or chara:getArmor(1):getName()
         end
         
-        love.graphics.print("WEAPON: "..weapon_name, 4, 256)
-        love.graphics.print("ARMOR: "..armor_name, 4, 288)
+        love.graphics.print(scr_gettext("MENU_5") ..": "..weapon_name, 4, 256)
+        love.graphics.print(scr_gettext("MENU_6") ..": "..armor_name, 4, 288)
     
-        love.graphics.print(Game:getConfig("lightCurrency"):upper()..": "..Game.lw_money, 4, 328)
+        love.graphics.print(Mod:getLightCurrency():upper()..": "..Game.lw_money, 4, 328)
         if MagicalGlassLib.kills > 20 then
-            love.graphics.print("KILLS: "..MagicalGlassLib.kills, 172, 328)
+            love.graphics.print(scr_gettext("MENU_7") ..": "..MagicalGlassLib.kills, 172, 328)
         end
     end)
 

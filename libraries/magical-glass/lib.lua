@@ -271,7 +271,7 @@ function lib:init()
                 if self.xp > 0 then
                     win_text = "* you murderdeathkilled the enemy!\n* Acquired PP (" .. self.xp .. ") and " .. self.money .. " "..Mod:getLightCurrency():lower().."."
                 else
-                    win_text = "* you are good.\n* Thank  you and also, have " .. self.money .. " "..Mod:getLightCurrency():lower().."."
+                    win_text = "* you are good.\n* Thank  you and also, have " .. self.money .. "\n"..Mod:getLightCurrency():lower().."."
                 end
             elseif Mod.language == "spanish" then
                 win_text = "* You won!\n* Got " .. self.xp .. " PP and " .. self.money .. " "..Mod:getLightCurrency():lower().."."
@@ -2226,9 +2226,9 @@ function lib:init()
         else
             Draw.setColor(PALETTE["world_text"])
         end
-        love.graphics.print("ITEM", 84, 188 + (36 * 0))
+        love.graphics.print(scr_gettext("MENU_1"), 84, 188 + (36 * 0))
         Draw.setColor(PALETTE["world_text"])
-        love.graphics.print("STAT", 84, 188 + (36 * 1))
+        love.graphics.print(scr_gettext("MENU_2"), 84, 188 + (36 * 1))
     
         if not Kristal.getLibConfig("magical-glass", "hide_cell") then
             if Game:getFlag("has_cell_phone") and #Game.world.calls > 0 then
@@ -2236,7 +2236,7 @@ function lib:init()
             else
                 Draw.setColor(PALETTE["world_gray"])
             end
-            love.graphics.print("CELL", 84, 188 + (36 * 2))
+            love.graphics.print(scr_gettext("MENU_3"), 84, 188 + (36 * 2))
         else
             if Game:getFlag("has_cell_phone") then
                 if #Game.world.calls > 0 then
@@ -2244,7 +2244,7 @@ function lib:init()
                 else
                     Draw.setColor(PALETTE["world_gray"])
                 end
-                love.graphics.print("CELL", 84, 188 + (36 * 2))
+                love.graphics.print(scr_gettext("MENU_3"), 84, 188 + (36 * 2))
             end
         end
     
@@ -2525,7 +2525,7 @@ function lib:init()
         local room_name = data.room_name         or "--"
     
         love.graphics.print(name,         self.box.x + 8,        self.box.y - 10 + 8)
-        love.graphics.print("LV "..level, self.box.x + 210 - 42, self.box.y - 10 + 8)
+        love.graphics.print("CR "..level, self.box.x + 210 - 42, self.box.y - 10 + 8)
     
         local minutes = math.floor(playtime / 60)
         local seconds = math.floor(playtime % 60)
@@ -2535,13 +2535,13 @@ function lib:init()
         love.graphics.print(room_name, self.box.x + 8, self.box.y + 38)
     
         if self.state == "MAIN" then
-            love.graphics.print("Save",   self.box.x + 30  + 8, self.box.y + 98)
-            love.graphics.print("Return", self.box.x + 210 + 8, self.box.y + 98)
+            love.graphics.print(scr_gettext("SAVE_1"),   self.box.x + 30  + 8, self.box.y + 98)
+            love.graphics.print(scr_gettext("SAVE_2"), self.box.x + 210 + 8, self.box.y + 98)
     
             Draw.setColor(Game:getSoulColor())
             Draw.draw(self.heart_sprite, self.box.x + 10 + (self.selected_x - 1) * 180, self.box.y + 96 + 8, 0, 2, 2)
         elseif self.state == "SAVED" then
-            love.graphics.print("File saved.", self.box.x + 30 + 8, self.box.y + 98)
+            love.graphics.print(scr_gettext("SAVE_3"), self.box.x + 30 + 8, self.box.y + 98)
         end
     
         Draw.setColor(1, 1, 1)

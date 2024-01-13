@@ -41,7 +41,7 @@ function LightActionBoxSingle:createButtons()
         btn_types = Kristal.libCall(lib_id, "getLightActionButtons", self.battler, btn_types) or btn_types
     end
     btn_types = Kristal.modCall("getLightActionButtons", self.battler, btn_types) or btn_types
-
+    --[[
     for i,btn in ipairs(btn_types) do
         if type(btn) == "string" then
             local x
@@ -67,6 +67,47 @@ function LightActionBoxSingle:createButtons()
                     x = x + 40 - 1
                 elseif loc == 4 then
                     x = x - 1
+                end
+            else
+                x = math.floor(67 + ((i - 1) * 117))
+            end
+            
+            local button = LightActionButton(btn, self.battler, x, 175)
+            button.actbox = self
+            table.insert(self.buttons, button)
+            self:addChild(button)
+        else
+            btn:setPosition(math.floor(66 + ((i - 1) * 156)) + 0.5, 183)
+            btn.battler = self.battler
+            btn.actbox = self
+            table.insert(self.buttons, btn)
+            self:addChild(btn)
+        end
+    end
+    --]]
+    for i,btn in ipairs(btn_types) do
+        if type(btn) == "string" then
+            local x
+            local loc = 2
+            if #btn_types <= 4 then
+                if #btn_types < 4 then
+                    if btn == "fight" then
+                        loc = 1
+                    elseif btn == "act" or btn == "spell" then
+                        loc = 2
+                    elseif btn == "item" then
+                        loc = 3
+                    elseif btn == "mercy" then
+                        loc = 4
+                    end
+                else
+                    loc = i
+                end
+                x = math.floor(67 + ((loc - 1) * 156))
+                if loc == 2 then
+                    x = x - 3
+                elseif loc == 3 then
+                    x = x + 1
                 end
             else
                 x = math.floor(67 + ((i - 1) * 117))
@@ -179,13 +220,14 @@ function LightActionBoxSingle:drawStatusStrip()
 
     love.graphics.setFont(Assets.getFont("namelv", 24))
     love.graphics.setColor(COLORS["white"])
+    love.graphics.print(name .. "   CR " .. level, x, y)
+    
+    --[[
     if flag == "swap" then
         love.graphics.print(name .. "   CR " .. level, x, y)
     else
         love.graphics.print(name .. "   CR " .. level, x, y)
     end
-    
-    --[[
     love.graphics.print("LV " .. level, x, y)
     love.graphics.printf("AAA", -18, 180, SCREEN_WIDTH, "center")
     --love.graphics.printf("THIS IS ISDSDFJSDJFSDJFJDSF", -179, 184-60, 1000, "center", 0)
@@ -208,7 +250,7 @@ function LightActionBoxSingle:drawStatusStrip()
 
     love.graphics.setColor(COLORS["red"])
     love.graphics.rectangle("fill", x + 245 --[[+ 139]], y, size * 1.25, 21)
-    love.graphics.setColor(COLORS["yellow"])
+    love.graphics.setColor(COLORS["lime"])
     love.graphics.rectangle("fill", x + 245 --[[+ 139]], y, limit == true and math.ceil((current / max) * size) * 1.25 or current * 1.25, 21)
 
     if max < 10 and max >= 0 then

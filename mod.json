@@ -48,7 +48,7 @@
             // Whether the mercy bar should appear or not
             "mercyBar": true,
             // Whether the HP and Mercy bars should show percentages
-            "enemyBarPercentages": true,
+            "enemyBarPercentages": false,
             // End of config
         }
     }

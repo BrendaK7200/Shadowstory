@@ -150,7 +150,7 @@
         // Draws the HP and Mercy text and Percentages on the gauges.
         // (Requires the Kristal config counterpart to also be enabled)
         /////
-        "enemy_bar_percentages": true,
+        "enemy_bar_percentages": false,
 
         ///// Light Enemy Chaser Auras
         // Whether enemies in the light world will also have auras.

@@ -9,6 +9,7 @@ function Mod:postInit(new_file)
     Game:setBorder("simple")
     if new_file then
         Game.lw_money = 0
+        Game:setFlag("has_cell_phone", false)
         local newFile = NewFile()
         newFile.layer = WORLD_LAYERS["ui"]
         Game.stage:addChild(newFile)

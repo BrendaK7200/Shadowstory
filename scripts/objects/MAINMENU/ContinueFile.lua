@@ -44,7 +44,7 @@ function ContinueFile:draw()
         love.graphics.draw(self.bg, 0, -238, 0, 2)
 
         love.graphics.printf(Game.save_name, 140, 130-6, SCREEN_WIDTH, "left")
-        love.graphics.printf("CR "..Game.save_level, -4, 130-6, SCREEN_WIDTH, "center")
+        love.graphics.printf("CR "..Game.party[1]:getLightLV(), -4, 130-6, SCREEN_WIDTH, "center")
         local minutes = math.floor(Game:getFlag("realplaytime") / 60)
         local seconds = math.floor(Game:getFlag("realplaytime") % 60)
         local time_text = string.format("%d:%02d", minutes, seconds)

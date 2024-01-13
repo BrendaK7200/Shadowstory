@@ -1100,7 +1100,7 @@ function LightBattle:onStateChange(old,new)
                 if self.xp > 0 then
                     win_text = "[noskip]* you murderdeathkilled the enemy!\n* Acquired PP (" .. self.xp .. ") and " .. self.money .. " "..Mod:getLightCurrency():lower().."."
                 else
-                    win_text = "[noskip]* you are good.\n* Thank  you and also, have " .. self.money .. " "..Mod:getLightCurrency():lower().."."
+                    win_text = "[noskip]* you are good.\n* Thank  you and also, have " .. self.money .. "\n"..Mod:getLightCurrency():lower().."."
                 end
             elseif Mod.language == "spanish" then
                 win_text = "[noskip]* YOU WON!\n* You earned " .. self.xp .. " PP and " .. self.money .. " " .. Mod:getLightCurrency():lower() .. "."

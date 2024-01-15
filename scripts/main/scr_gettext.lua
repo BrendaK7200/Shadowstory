@@ -53,6 +53,13 @@ Mod.TXT_ENGLISH = {
     ["MENU_5"]                       = "WEAPON",
     ["MENU_6"]                       = "ARMOR",
     ["MENU_7"]                       = "KILLS",
+
+    ["ECHO_1"]                       = "* Hello there darling,[wait:5]\nI'm [color:00ffff]Echo[color:white],[wait:5] [color:00ffff]Echo the Echo Flower[color:white].",
+    ["ECHO_2"]                       = "* Well,[wait:5] you certainly look confused.",
+    ["ECHO_3"]                       = "* Say,[wait:5] you must be new down here then,[wait:5] aren't you?",
+    ["ECHO_4"]                       = "* Don't worry darling,[wait:5] I'll show you the ropes.",
+    ["ECHOBATTLE_1"]                 = "You see that little pink heart right there?",
+    ["ECHOBATTLE_2"]                 = "That's your SOUL,[wait:5] the very culmination of your being.",
 }
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 Mod.TXT_ENGRISH = {

@@ -63,7 +63,12 @@
   <object id="21" x="1280" y="280" width="40" height="40"/>
  </objectgroup>
  <objectgroup id="5" name="objects">
-  <object id="22" name="transition" x="1200" y="280" width="80" height="40"/>
+  <object id="22" name="transition" x="1200" y="280" width="80" height="40">
+   <properties>
+    <property name="map" value="area2"/>
+    <property name="marker" value="spawn"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup id="4" name="markers">
   <object id="18" name="spawn" x="300" y="280">

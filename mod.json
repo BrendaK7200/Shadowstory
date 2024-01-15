@@ -17,7 +17,7 @@
     "chapter": 1,
 
     // The map that you start in when first starting the mod.
-    "map": "ruins/room_area1",
+    "map": "area1",
 
     // The party. The first character is the player.
     "party": ["napsta"],

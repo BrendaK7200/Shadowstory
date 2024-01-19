@@ -27,22 +27,22 @@ function Moldsmal:init()
     }
 
     self.dialogue = {
-        "[wave:2]Burble\nburb...",
-        "[wave:2]Squorch\n...",
-        "[wave:2]*Slime\nsounds*",
-        "[wave:2]*Sexy\nwiggle*"
+        scr_gettext("MOLDSMAL_DIALOGUE1"),
+        scr_gettext("MOLDSMAL_DIALOGUE2"),
+        scr_gettext("MOLDSMAL_DIALOGUE3"),
+        scr_gettext("MOLDSMAL_DIALOGUE4")
     }
 
-    self.check = "ATK 6 DEF 0\n* Stereotypical: Curvaceously\nattractive,[wait:5] but no brains..."
+    self.check = scr_gettext("MOLDSMAL_CHECK")
 
     self.text = {
-        "* Moldsmal burbles quietly.",
-        "* Moldsmal waits pensively.",
-        "* Moldsmal is ruminating.",
-        "* The aroma of lime gelatin\nwafts through."
+        scr_gettext("MOLDSMAL_TEXT1"),
+        scr_gettext("MOLDSMAL_TEXT2"),
+        scr_gettext("MOLDSMAL_TEXT3"),
+        scr_gettext("MOLDSMAL_TEXT4")
     }
     
-    self.low_health_text = "* Moldsmal has started to spoil."
+    self.low_health_text = scr_gettext("MOLDSMAL_LOWHEALTH")
 
     self:registerAct("Imitate")
     self:registerAct("Flirt")
@@ -53,10 +53,10 @@ end
 function Moldsmal:onAct(battler, name)
     if name == "Imitate" then
         self.money = 1
-        return "* You lie immobile with Moldsmal.[wait:10]\n* You feel like you understand\nthe world a little better."
+        return scr_gettext("MOLDSMAL_ACT1")
     elseif name == "Flirt" then
         self.money = 1
-        return "* You wiggle your hips.[wait:10]\n* Moldsmal wiggles back.[wait:10]\n* What a meaningful conversation!"
+        return scr_gettext("MOLDSMAL_ACT2")
     end
 
     return super:onAct(self, battler, name)

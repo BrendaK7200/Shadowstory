@@ -3,7 +3,7 @@ local encounter, super = Class(LightEncounter)
 function encounter:init()
     super:init(self)
 
-    self.text = "* Moldsmal blocked the way!"
+    self.text = scr_gettext("MOLDSMAL_ENCOUNTER")
 
     self.music = "battleut"
 

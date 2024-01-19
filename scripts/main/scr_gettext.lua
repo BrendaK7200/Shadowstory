@@ -60,6 +60,22 @@ Mod.TXT_ENGLISH = {
     ["ECHO_4"]                       = "* Don't worry darling,[wait:5] I'll show you the ropes.",
     ["ECHOBATTLE_1"]                 = "You see that little pink heart right there?",
     ["ECHOBATTLE_2"]                 = "That's your SOUL,[wait:5] the very culmination of your being.",
+
+    ["MOLDSMAL_ENCOUNTER"]           = "* Moldsmal blocked the way!",
+    ["MOLDSMAL2_ENCOUNTER"]          = "* Moldsmal and Moldsmal block\nthe way.",
+    ["MOLDSMAL3_ENCOUNTER"]          = "* You tripped into a line of Moldsmals.",
+    ["MOLDSMAL_CHECK"]               = "ATK 6 DEF 0\n* Stereotypical: Curvaceously\nattractive,[wait:5] but no brains...",
+    ["MOLDSMAL_DIALOGUE1"]           = "[wave:2]Burble\nburb...",
+    ["MOLDSMAL_DIALOGUE2"]           = "[wave:2]Squorch\n...",
+    ["MOLDSMAL_DIALOGUE3"]           = "[wave:2]*Slime\nsounds*",
+    ["MOLDSMAL_DIALOGUE4"]           = "[wave:2]*Sexy\nwiggle*",
+    ["MOLDSMAL_TEXT1"]               = "* Moldsmal burbles quietly.",
+    ["MOLDSMAL_TEXT2"]               = "* Moldsmal waits pensively.",
+    ["MOLDSMAL_TEXT3"]               = "* Moldsmal is ruminating.",
+    ["MOLDSMAL_TEXT4"]               = "* The aroma of lime gelatin\nwafts through.",
+    ["MOLDSMAL_LOWHEALTH"]           = "* Moldsmal has started to spoil.",
+    ["MOLDSMAL_ACT1"]                = "* You lie immobile with Moldsmal.[wait:10]\n* You feel like you understand\nthe world a little better.",
+    ["MOLDSMAL_ACT2"]                = "* You wiggle your hips.[wait:10]\n* Moldsmal wiggles back.[wait:10]\n* What a meaningful conversation!",
 }
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 Mod.TXT_ENGRISH = {
@@ -116,6 +132,22 @@ Mod.TXT_ENGRISH = {
     ["MENU_5"]                       = "HIT THING",
     ["MENU_6"]                       = "HELP THING",
     ["MENU_7"]                       = "MURDERDEATHKILLS",
+
+    ["MOLDSMAL_ENCOUNTER"]           = "* Holy shit is is that a slime\nfrom Terraria?!",
+    ["MOLDSMAL2_ENCOUNTER"]          = "* Time to get jiggy.",
+    ["MOLDSMAL3_ENCOUNTER"]          = "* It must be slimefest.",
+    ["MOLDSMAL_CHECK"]               = "ATK 6 DEF 0\n* It got that LV 20 GYATT\n* Also a pre-school drop-out.",
+    ["MOLDSMAL_DIALOGUE1"]           = "[wave:2]Burble\nburb...",
+    ["MOLDSMAL_DIALOGUE2"]           = "[wave:2]Squorch\n...",
+    ["MOLDSMAL_DIALOGUE3"]           = "[wave:2]*Slime\nsounds*",
+    ["MOLDSMAL_DIALOGUE4"]           = "[wave:2]*Rizzy\nwiggle*",
+    ["MOLDSMAL_TEXT1"]               = "* Must be a Terraria reference.",
+    ["MOLDSMAL_TEXT2"]               = "* Moldsmal is sticking out its gyatt for the rizzler.",
+    ["MOLDSMAL_TEXT3"]               = "* Moldsmal is rizzinating.",
+    ["MOLDSMAL_TEXT4"]               = "* The aroma of slimy gyatts\nwafts through.",
+    ["MOLDSMAL_LOWHEALTH"]           = "* Moldsmal is loosing its cake.",
+    ["MOLDSMAL_ACT1"]                = "* You imitate Moldsmal's dumb\nstupid non-existant idiodic\nbrain by failing to solve 1+1.",
+    ["MOLDSMAL_ACT2"]                = "* You rizz up Moldsmal.[wait:40]\n* Why the fuck are you rizzing\nup a slime?",
 }
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 Mod.TXT_SPANISH = {

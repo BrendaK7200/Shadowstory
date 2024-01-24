@@ -84,6 +84,22 @@ Mod.TXT_ENGLISH = {
     ["ECHOBATTLE_10"]                = "O-oh, no... A human...! H-hey, are you okay? A-are you hurt anywhere?",
     ["ECHOBATTLE_10"]                = "P-please, don't worry, I'll try my best to help you!
     ["ECHOBATTLE_10"]                = "P-please, don't worry, I'll try my best to help you!
+    
+    ["MOLDSMAL_ENCOUNTER"]           = "* Moldsmal blocked the way!",
+    ["MOLDSMAL2_ENCOUNTER"]          = "* Moldsmal and Moldsmal block\nthe way.",
+    ["MOLDSMAL3_ENCOUNTER"]          = "* You tripped into a line of Moldsmals.",
+    ["MOLDSMAL_CHECK"]               = "ATK 6 DEF 0\n* Stereotypical: Curvaceously\nattractive,[wait:5] but no brains...",
+    ["MOLDSMAL_DIALOGUE1"]           = "[wave:2]Burble\nburb...",
+    ["MOLDSMAL_DIALOGUE2"]           = "[wave:2]Squorch\n...",
+    ["MOLDSMAL_DIALOGUE3"]           = "[wave:2]*Slime\nsounds*",
+    ["MOLDSMAL_DIALOGUE4"]           = "[wave:2]*Sexy\nwiggle*",
+    ["MOLDSMAL_TEXT1"]               = "* Moldsmal burbles quietly.",
+    ["MOLDSMAL_TEXT2"]               = "* Moldsmal waits pensively.",
+    ["MOLDSMAL_TEXT3"]               = "* Moldsmal is ruminating.",
+    ["MOLDSMAL_TEXT4"]               = "* The aroma of lime gelatin\nwafts through.",
+    ["MOLDSMAL_LOWHEALTH"]           = "* Moldsmal has started to spoil.",
+    ["MOLDSMAL_ACT1"]                = "* You lie immobile with Moldsmal.[wait:10]\n* You feel like you understand\nthe world a little better.",
+    ["MOLDSMAL_ACT2"]                = "* You wiggle your hips.[wait:10]\n* Moldsmal wiggles back.[wait:10]\n* What a meaningful conversation!",
         
 }
 ------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -141,6 +157,22 @@ Mod.TXT_ENGRISH = {
     ["MENU_5"]                       = "HIT THING",
     ["MENU_6"]                       = "HELP THING",
     ["MENU_7"]                       = "MURDERDEATHKILLS",
+
+    ["MOLDSMAL_ENCOUNTER"]           = "* Rimuru Tempest \"blocks\" your path.",
+    ["MOLDSMAL2_ENCOUNTER"]          = "* You've been put into a... STICKY situation ;)",
+    ["MOLDSMAL3_ENCOUNTER"]          = "* Is this a Craftmine reference?",
+    ["MOLDSMAL_CHECK"]               = {"ATK 6 DEF 9 RZZ 420\n* A terrific murderdeathkilling device. Don't Fuck with These creatures or you'll be in for a [color:red]Bad Time[color:reset].", "* A [color:red]TERRIBLE[color:reset] time, even. Times a pretty good, times a pretty bad..."},
+    ["MOLDSMAL_DIALOGUE1"]           = "[wave:2]wegle nugle\nmwegle negle...",
+    ["MOLDSMAL_DIALOGUE2"]           = "[wave:2]Ul Huma...",
+    ["MOLDSMAL_DIALOGUE3"]           = "[wave:2]Look @ Me\nIm Ballin",
+    ["MOLDSMAL_DIALOGUE4"]           = "[wave:2]Terrific",
+    ["MOLDSMAL_TEXT1"]               = "* Will you be the Gyatt to my Rizzler?.",
+    ["MOLDSMAL_TEXT2"]               = "* Slime thinks you're very 'skibidi'.",
+    ["MOLDSMAL_TEXT3"]               = "[wave:2]* Wow, Your so Fanum Tax",
+    ["MOLDSMAL_TEXT4"]               = "* The stench of slimy gyatt enters your nostrils, filling you with C[wait:0.5]DETERMINATION. Yes...",
+    ["MOLDSMAL_LOWHEALTH"]           = "* Molsmal is slowly remembering you're Genocides...",
+    ["MOLDSMAL_ACT1"]                = "* You imitate Moldsmal.\n[color:pink][wave:2]* hey... you... your very skibidi...",
+    ["MOLDSMAL_ACT2"]                = "* You rizz up the Moldsmal.[wait:40]\n* You're not getting any kinky flavor text, dammit!",
 }
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 Mod.TXT_SPANISH = {

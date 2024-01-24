@@ -19,8 +19,7 @@ function encounter:getDialogueCutscene()
     return function(cutscene)
         cutscene:wait(1)
         local echo = Game.battle.enemies[1]
-        local dialogue = scr_gettext("ECHOBATTLE_1")
-        echo:spawnSpeechBubble(dialogue, {no_sound_overlap = true})
+        echo:spawnSpeechBubble(scr_gettext("ECHOBATTLE_1"), {no_sound_overlap = true})
     end
 end
 

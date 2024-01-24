@@ -54,12 +54,37 @@ Mod.TXT_ENGLISH = {
     ["MENU_6"]                       = "ARMOR",
     ["MENU_7"]                       = "KILLS",
 
-    ["ECHO_1"]                       = "* Hello there darling,[wait:5]\nI'm [color:00ffff]Echo[color:white],[wait:5] [color:00ffff]Echo the Echo Flower[color:white].",
+    ["ECHO_1"]                       = "* Hm,[wait:5] evening,[wait:5] darling.[wait:10]\nI'm [color:00ffff]Echo[color:white],[wait:5] [color:00ffff]Echo the Echo Flower[color:white].",
     ["ECHO_2"]                       = "* Well,[wait:5] you certainly look confused.",
     ["ECHO_3"]                       = "* Say,[wait:5] you must be new down here then,[wait:5] aren't you?",
     ["ECHO_4"]                       = "* Don't worry darling,[wait:5] I'll show you the ropes.",
-    ["ECHOBATTLE_1"]                 = "You see that little pink heart right there?",
+    ["ECHOBATTLE_1"]                 = "You see that little heart right there?",
     ["ECHOBATTLE_2"]                 = "That's your SOUL,[wait:5] the very culmination of your being.",
+    ["ECHOBATTLE_3"]                 = "It starts off reeeaally weak,[wait:5] but you can make it strong by treating it with some CR.",
+    ["ECHOBATTLE_4"]                 = "What's CR stand for?[wait:5]\nWhy, CARE, of course!",
+    ["ECHOBATTLE_5"]                 = "You'd appreciate some tender CARE from little ol' me,[wait:5] wouldn't ya?",
+    ["ECHOBATTLE_6"]                 = "Don't fret,[wait:5] darling,[wait:5] for I have much to give!",
+    ["ECHOBATTLE_7"]                 = "Down in the UNDERGROUND,[wait:5] CARE is shared through...",
+    ["ECHOBATTLE_8"]                 = "Some fabulously small lil pellets of mine!",
+    ["ECHOBATTLE_9"]                 = "Are you ready?",
+    ["ECHOBATTLE_10"]                = "Move 'round then![wait:5] You gotta catch 'em all!",
+    ["ECHOBATTLE_10"]                = "Darling,[wait:5] I think you moved a little TOO much.",
+    ["ECHOBATTLE_10"]                = "Let's start over,[wait:5] okay?",
+    ["ECHOBATTLE_10"]                = "all!",
+    ["ECHOBATTLE_10"]                = "all!",
+    ["ECHOBATTLE_10"]                = "all!",
+    ["ECHOBATTLE_10"]                = "all!",
+    ["ECHOBATTLE_10"]                = "all!",
+    ["ECHOBATTLE_10"]                = "all!",
+    ["ECHOBATTLE_10"]                = "all!",
+    ["ECHOBATTLE_10"]                = "[shake:2]You fabulously disgraced stupid idiot.",
+    ["ECHOBATTLE_10"]                = "[shake:2]In this world, it's SIN or DIP.",
+    ["ECHOBATTLE_10"]                = "[shake:2]DIP meaning DEATH.",
+    ["ECHOBATTLE_10"]                = "[font:dotumche]Death Meaning You",
+    ["ECHOBATTLE_10"]                = "O-oh, no... A human...! H-hey, are you okay? A-are you hurt anywhere?",
+    ["ECHOBATTLE_10"]                = "P-please, don't worry, I'll try my best to help you!
+    ["ECHOBATTLE_10"]                = "P-please, don't worry, I'll try my best to help you!
+        
 }
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 Mod.TXT_ENGRISH = {

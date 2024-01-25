@@ -6,8 +6,44 @@ function Mod:init()
 end
 
 function Mod:postInit(new_file)
+    Mod.is_new_file = new_file
     Game:setBorder("simple")
-    if new_file then
+    Game.world:startCutscene(function(cutscene)
+        local logo = Sprite("logo", 0, 0)
+        logo:setOrigin(0, -0.42)
+        Game.world:addChild(logo)
+        logo.layer = WORLD_LAYERS["top"]
+        cutscene:wait(1.25)
+        logo:remove()
+        Game.story = StoryHandler()
+        Game.world:addChild(Game.story)
+        Game.story.layer = WORLD_LAYERS["above_ui"] - 50
+        cutscene:wait(function() return Game.story:isOver() end)
+        Game.story:remove()
+    end)
+end
+
+function Mod:loadStory()
+    if Game.utt then Game.utt:remove() end
+    if not Game.world.cutscene then
+        Game.world:startCutscene(function(cutscene)
+            Game.story = StoryHandler()
+            Game.world:addChild(Game.story)
+            Game.story.layer = WORLD_LAYERS["above_ui"] - 50
+            cutscene:wait(function() return Game.story:isOver() end)
+            Game.story:remove()
+        end)
+    else
+        Game.story = StoryHandler()
+        Game.world:addChild(Game.story)
+        Game.story.layer = WORLD_LAYERS["above_ui"] - 50
+        Game.world.cutscene:wait(function() return Game.story:isOver() end)
+        Game.story:remove()
+    end
+end
+
+function Mod:loadMenus()
+    if Mod.is_new_file then
         Game.lw_money = 0
         Game:setFlag("has_cell_phone", false)
         local newFile = NewFile()

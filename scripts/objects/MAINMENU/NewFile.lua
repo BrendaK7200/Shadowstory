@@ -21,6 +21,7 @@ end
 
 function NewFile:draw()
     super.draw(self)
+    love.graphics.setFont(self.font)
     love.graphics.setColor(0,0,0)
     love.graphics.rectangle("fill", 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)
 

@@ -81,6 +81,7 @@ end
 
 function OptionsMenu:draw()
     super.draw(self)
+    love.graphics.setFont(self.font)
     self.siner = self.siner + 1
 
     if self.weather == 1 then

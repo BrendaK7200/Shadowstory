@@ -63,6 +63,7 @@ end
 
 function NamingScreen:draw()
     super.draw(self)
+    love.graphics.setFont(self.font)
     love.graphics.setColor(0,0,0)
     if self.draw_bg then
         love.graphics.rectangle("fill", 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)

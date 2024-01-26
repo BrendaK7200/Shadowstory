@@ -34,9 +34,8 @@ function UndertaleTitle:update()
     if self.can_click == true then
         if Input.pressed("confirm", false) then
             self.can_click = false
-            Input.clear("confirm")
-            if Game.story then Game.story:remove() end
             Mod:loadMenus()
+            self:remove()
         end
     end
 end

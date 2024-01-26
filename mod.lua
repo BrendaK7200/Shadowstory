@@ -15,31 +15,13 @@ function Mod:postInit(new_file)
         logo.layer = WORLD_LAYERS["top"]
         cutscene:wait(1.25)
         logo:remove()
-        Game.story = StoryHandler()
-        Game.world:addChild(Game.story)
-        Game.story.layer = WORLD_LAYERS["above_ui"] - 50
-        cutscene:wait(function() return Game.story:isOver() end)
-        Game.story:remove()
+        local story = StoryHandler()
+        Game.world:addChild(story)
+        story.layer = WORLD_LAYERS["above_ui"] - 50
+        cutscene:wait(function() return story:isOver() end)
+        Game.world:removeChild(story)
+        story:remove()
     end)
-end
-
-function Mod:loadStory()
-    if Game.utt then Game.utt:remove() end
-    if not Game.world.cutscene then
-        Game.world:startCutscene(function(cutscene)
-            Game.story = StoryHandler()
-            Game.world:addChild(Game.story)
-            Game.story.layer = WORLD_LAYERS["above_ui"] - 50
-            cutscene:wait(function() return Game.story:isOver() end)
-            Game.story:remove()
-        end)
-    else
-        Game.story = StoryHandler()
-        Game.world:addChild(Game.story)
-        Game.story.layer = WORLD_LAYERS["above_ui"] - 50
-        Game.world.cutscene:wait(function() return Game.story:isOver() end)
-        Game.story:remove()
-    end
 end
 
 function Mod:loadMenus()

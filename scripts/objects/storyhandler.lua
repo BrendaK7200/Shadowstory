@@ -104,9 +104,9 @@ function StoryHandler:update()
             Game.world.fader:fadeOut(nil, {speed = 0.75, color = COLORS.black})
             Game.world.timer:after(0.75+0.25, function()
                 self.done = true
-                Game.utt = UndertaleTitle()
-                Game.world:addChild(Game.utt)
-                Game.utt.layer = WORLD_LAYERS["top"]
+                local utt = UndertaleTitle()
+                Game.world:addChild(utt)
+                utt.layer = WORLD_LAYERS["top"]
                 self:remove()
             end)
         end
@@ -205,9 +205,9 @@ function StoryHandler:handleCutscene(cutscene)
     Game.world.fader:fadeOut(nil, {speed = 50/30, color = COLORS.black})
     cutscene:wait((50/30)+0.25)
     self.done = true
-    Game.utt = UndertaleTitle()
-    Game.world:addChild(Game.utt)
-    Game.utt.layer = WORLD_LAYERS["top"]
+    local utt = UndertaleTitle()
+    Game.world:addChild(utt)
+    utt.layer = WORLD_LAYERS["top"]
     self:remove()
 end
 

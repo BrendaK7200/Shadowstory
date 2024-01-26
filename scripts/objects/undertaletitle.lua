@@ -15,6 +15,8 @@ function UndertaleTitle:init()
     self.logo.layer = WORLD_LAYERS["top"]
     self:addChild(self.logo)
     Assets.playSound("intronoise")
+
+    Game.world.fader:fadeIn()
 end
 
 function UndertaleTitle:draw()

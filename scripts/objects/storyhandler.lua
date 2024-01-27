@@ -34,7 +34,7 @@ function StoryHandler:init()
 
     self.fade:setOrigin(0, 0)
 
-    self.music = Music("ut_story", 1, 0.91)
+    self.music = Music("story", 1, 1)
     self.music.source:setLooping(false)
 
     self.timer = Timer()

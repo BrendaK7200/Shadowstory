@@ -5,7 +5,7 @@ function encounter:init()
 
     self.text = scr_gettext("MOLDSMAL_ENCOUNTER")
 
-    self.music = "battleut"
+    self.music = "battle1"
 
     self:addEnemy("moldsmal", SCREEN_WIDTH/2, 226)
 end

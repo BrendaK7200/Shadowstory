@@ -5,7 +5,7 @@ function encounter:init()
 
     self.text = "* A pair of Froggits hop\ntowards you."
 
-    self.music = "battleut"
+    self.music = "battle1"
 
     self:addEnemy("froggit", SCREEN_WIDTH/2 - 149, 246)
     self:addEnemy("froggit", SCREEN_WIDTH/2 + 55, 246)
